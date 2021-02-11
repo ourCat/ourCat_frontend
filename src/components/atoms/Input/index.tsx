@@ -15,7 +15,7 @@ export interface IInputProps {
   type?: string;
   defaultValue?: string | string[] | number;
   placeholder?: string;
-  maxLength?: any;
+  maxLength?: number;
   autoComplete?: string;
   disabled?: boolean;
   font?: fontType;
@@ -34,7 +34,6 @@ export interface IInputProps {
   opacity?: number;
 }
 
-export const Input: React.FC<IInputProps> = (props) => {
-  console.log(props);
+export const Input: React.FC<IInputProps> = props => {
   return <S.WrapInput {...props}>{props.children}</S.WrapInput>;
 };
