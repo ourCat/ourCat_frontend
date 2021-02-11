@@ -5,7 +5,6 @@ import { AppProps } from 'next/app';
 
 import { ThemeProvider } from 'styled-components';
 import Themes from 'styles/Theme';
-import { Label } from 'components/atoms/Label';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
