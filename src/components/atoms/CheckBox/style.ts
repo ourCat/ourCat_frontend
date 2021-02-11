@@ -1,0 +1,20 @@
+import styled from 'styled-components';
+import { CheckBoxProps } from './index';
+
+export const Wrap = styled.div``;
+
+export const CheckBoxLabel = styled.label<CheckBoxProps>`
+  display: flex;
+`;
+export const CheckBoxInput = styled.input`
+  display: none;
+`;
+export const IconContainer = styled.div<CheckBoxProps>`
+  color: ${props => props.theme.colors.MAIN};
+  font-size: ${props => props.iconSize && props.iconSize};
+`;
+export const LabelContainer = styled.div<CheckBoxProps>`
+  margin-left: 10px;
+  text-align: center;
+  font: ${props => props.fontSize && props.theme.fontSize[props.fontSize]};
+`;

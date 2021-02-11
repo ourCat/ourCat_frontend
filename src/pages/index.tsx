@@ -1,4 +1,4 @@
-import { Label } from 'components/atoms/Label';
+import { Label } from 'components/atoms';
 
 const Home = () => {
   return (
