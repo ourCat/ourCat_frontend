@@ -1,30 +1,11 @@
-import { fontType } from 'components';
+import { IComponent } from 'common';
 import * as S from './style';
 
-export interface IRangeProps {
-  id?: string;
-  name?: string;
-  className?: string;
-  children?: React.ReactNode;
+export interface IRangeProps extends IComponent {
   onClick?: React.MouseEventHandler<HTMLElement>;
   onChange?: React.ChangeEventHandler<HTMLElement>;
   ref?: React.RefObject<HTMLInputElement>;
   defaultValue?: string | string[] | number;
-  maxLength?: number;
-  disabled?: boolean;
-  font?: fontType;
-  position?: string;
-  top?: number;
-  right?: number;
-  bottom?: number;
-  left?: number;
-  width?: string;
-  height?: string;
-  margin?: string;
-  padding?: string;
-  border?: string;
-  color?: string;
-  opacity?: number;
   maxStep?: string;
   minStep?: string;
   step?: string;
