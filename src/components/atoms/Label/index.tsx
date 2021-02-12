@@ -1,6 +1,6 @@
-import { IComponent } from 'common/Interfaces/IComponent';
 import React from 'react';
 import * as S from './style';
+import { IComponent } from 'common';
 export interface ILabelProps extends IComponent {
   onClick?: React.MouseEventHandler<HTMLElement>;
 

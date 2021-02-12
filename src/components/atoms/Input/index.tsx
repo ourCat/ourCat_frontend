@@ -1,6 +1,6 @@
 import React from 'react';
 import * as S from './style';
-import { IComponent } from 'common/Interfaces/IComponent';
+import { IComponent } from 'common';
 export interface IInputProps extends IComponent {
   ref?: React.RefObject<HTMLInputElement>;
   type?: string;

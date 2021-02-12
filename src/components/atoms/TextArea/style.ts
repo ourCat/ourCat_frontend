@@ -1,4 +1,4 @@
-import { ComponentMixin } from 'common/Mixins';
+import { ComponentMixin } from 'common';
 import styled from 'styled-components';
 import { ITextAreaProps } from '.';
 

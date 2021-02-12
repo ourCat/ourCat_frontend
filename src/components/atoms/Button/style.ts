@@ -1,4 +1,4 @@
-import { ComponentMixin } from 'common/Mixins';
+import { ComponentMixin } from 'common';
 import styled, { css } from 'styled-components';
 import { ButtonProps } from './index';
 

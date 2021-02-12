@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { ComponentMixin } from 'common/Mixins';
+import { ComponentMixin } from 'common';
 import { ImageProps } from './index';
 
 export const WrapImage = styled.image<ImageProps>`

@@ -1,4 +1,4 @@
-import { IComponent } from 'common/Interfaces/IComponent';
+import { IComponent } from 'common';
 import * as S from './style';
 
 export interface ButtonProps extends IComponent {
