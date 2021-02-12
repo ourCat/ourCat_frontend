@@ -30,7 +30,6 @@ export interface IInputProps {
   padding?: string;
   border?: string;
   color?: string;
-  pointer?: boolean;
   opacity?: number;
 }
 
