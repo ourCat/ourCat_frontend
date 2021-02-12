@@ -1,24 +1,16 @@
-import { fontType } from 'components/atoms';
+import * as S from './style';
+import { IComponent } from 'common';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckSquare } from '@fortawesome/free-solid-svg-icons';
 import { faSquare } from '@fortawesome/free-regular-svg-icons';
-import * as S from './style';
 
-export interface CheckBoxProps {
-  id?: string;
-  className?: string;
-  children?: React.ReactNode;
+export interface CheckBoxProps extends IComponent {
+  disabled?: boolean;
   onClick?: React.MouseEventHandler<HTMLElement>;
   hasLabel?: boolean;
   isChecked?: boolean;
   label?: string;
-  disabled?: boolean;
-  width?: string;
-  margin?: string;
-  padding?: string;
-  fontSize?: fontType;
   iconSize?: string;
-  color?: string;
 }
 
 export const CheckBox: React.FC<CheckBoxProps> = ({
@@ -27,7 +19,6 @@ export const CheckBox: React.FC<CheckBoxProps> = ({
   hasLabel,
   isChecked,
   label,
-  fontSize = 16,
   ...props
 }) => {
   return (
