@@ -1,10 +1,10 @@
-import { Label, CheckBox } from 'components/atoms';
+import { Label, CheckBox } from 'components';
 
 const Home = () => {
   return (
     <>
-      <CheckBox>
-        <Label font={14} weight="bold">
+      <CheckBox hasLabel isChecked>
+        <Label font={14} weight="bold" margin={'0 0 0 10px'}>
           하이
         </Label>
       </CheckBox>
