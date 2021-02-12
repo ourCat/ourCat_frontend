@@ -1,5 +1,5 @@
-export * from './Label';
-export * from './Button';
-export * from '../molecules/CheckBox';
-export * from './Input'
+export * from './CheckBox';
+export * from './Image';
+export * from './Input';
 export * from './TextArea'
+
