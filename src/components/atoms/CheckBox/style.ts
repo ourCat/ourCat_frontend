@@ -1,7 +1,10 @@
+import { ComponentMixin } from 'common';
 import styled from 'styled-components';
 import { CheckBoxProps } from './index';
 
-export const Wrap = styled.div``;
+export const Wrap = styled.div`
+  ${ComponentMixin};
+`;
 
 export const CheckBoxLabel = styled.label<CheckBoxProps>`
   display: flex;
