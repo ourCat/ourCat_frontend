@@ -1,4 +1,4 @@
-import { IComponent } from 'components/common/Interfaces/IComponent';
+import { IComponent } from 'common/Interfaces/IComponent';
 import React from 'react';
 import * as S from './style';
 export interface ILabelProps extends IComponent {

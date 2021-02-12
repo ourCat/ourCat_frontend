@@ -1,6 +1,6 @@
 import React from 'react';
 import * as S from './style';
-import { IComponent } from 'components/common/Interfaces/IComponent';
+import { IComponent } from 'common/Interfaces/IComponent';
 
 export interface ITextAreaProps extends IComponent {
   ref?: React.RefObject<HTMLTextAreaElement>;

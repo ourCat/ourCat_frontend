@@ -1,4 +1,4 @@
-import { ComponentMixin } from 'components/common/Mixins';
+import { ComponentMixin } from 'common/Mixins';
 import styled from 'styled-components';
 import { CheckBoxProps } from './index';
 

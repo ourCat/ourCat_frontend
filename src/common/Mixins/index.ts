@@ -1,5 +1,5 @@
 import { css } from 'styled-components';
-import { IComponent } from '../Interfaces/IComponent';
+import { IComponent } from 'common/Interfaces/IComponent';
 
 export const ComponentMixin = css<IComponent>`
   position: ${props => props.position && props.position};

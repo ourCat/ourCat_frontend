@@ -1,4 +1,4 @@
-import { IComponent } from 'components/common/Interfaces/IComponent';
+import { IComponent } from 'common/Interfaces/IComponent';
 import * as S from './style';
 
 export interface ImageProps extends IComponent {
