@@ -22,6 +22,7 @@ export interface CheckBoxProps {
 }
 
 export const CheckBox: React.FC<CheckBoxProps> = ({
+  children,
   onClick,
   hasLabel,
   isChecked,
@@ -42,7 +43,7 @@ export const CheckBox: React.FC<CheckBoxProps> = ({
             <FontAwesomeIcon icon={faSquare} />
           </S.IconContainer>
         )}
-        {hasLabel ? <S.LabelContainer {...props}>{label}</S.LabelContainer> : null}
+        {hasLabel ? { children } : null}
       </S.CheckBoxLabel>
     </S.Wrap>
   );

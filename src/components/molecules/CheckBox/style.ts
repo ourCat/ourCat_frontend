@@ -13,8 +13,3 @@ export const IconContainer = styled.div<CheckBoxProps>`
   color: ${props => props.theme.colors.MAIN};
   font-size: ${props => props.iconSize && props.iconSize};
 `;
-export const LabelContainer = styled.div<CheckBoxProps>`
-  margin-left: 10px;
-  text-align: center;
-  font: ${props => props.fontSize && props.theme.fontSize[props.fontSize]};
-`;
