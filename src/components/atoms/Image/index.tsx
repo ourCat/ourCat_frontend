@@ -2,11 +2,11 @@ import { IComponent } from 'common';
 import * as S from './style';
 
 export interface ImageProps extends IComponent {
-  url?: string;
+  src?: string;
   pointer?: string;
-  onClick?: React.MouseEventHandler<SVGImageElement>;
+  onClick?: React.MouseEventHandler<HTMLImageElement>;
 }
 
-export const Image: React.FC<ImageProps> = ({ url, ...props }) => {
-  return <S.WrapImage {...props} url={url} />;
+export const Image: React.FC<ImageProps> = ({ src, ...props }) => {
+  return <S.WrapImage {...props} src={src} />;
 };
