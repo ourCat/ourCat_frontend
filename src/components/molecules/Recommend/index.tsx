@@ -4,19 +4,19 @@ import * as S from './style';
 
 export interface IRecommendProps extends IComponent {
   img: string;
-  label: string;
+  labelText: string;
 }
 
 export const Recommend: React.FC<IRecommendProps> = ({
   img = '/images/img.png',
-  label,
+  labelText,
   ...props
 }) => {
   return (
     <S.Wrap {...props}>
       <Image src={img} borderRadius={'50%'} {...props} />
       <S.LabelContainer>
-        <Label>{label}</Label>
+        <Label>{labelText}</Label>
       </S.LabelContainer>
     </S.Wrap>
   );
