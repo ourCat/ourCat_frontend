@@ -48,10 +48,16 @@ const fontWeights: { [key: string]: number } = {
   bold: 700,
 };
 
+const viewSizes: { [key: string]: string } = {
+  MB: '@media only screen and (max-width: 1080px)',
+  PC: '@media only screen and (min-width: 1080px)',
+};
+
 const Themes = {
   colors,
   fonts,
   fontWeights,
+  viewSizes,
 };
 
 export default Themes;
