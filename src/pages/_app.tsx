@@ -5,15 +5,22 @@ import { AppProps } from 'next/app';
 
 import { ThemeProvider } from 'styled-components';
 import Themes from 'styles/Theme';
+import { MainLayout } from 'layouts';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <ThemeProvider theme={Themes}>
       <Head>
         <title>타이틀</title>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+        />
       </Head>
       <GlobalStyles />
-      <Component {...pageProps} />
+      <MainLayout>
+        <Component {...pageProps} />
+      </MainLayout>
     </ThemeProvider>
   );
 };
