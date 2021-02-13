@@ -4,4 +4,4 @@ export * from './Image';
 export * from './Input';
 export * from './Range';
 export * from './TextArea';
-export * from './Tag';
+export * from './Badge';

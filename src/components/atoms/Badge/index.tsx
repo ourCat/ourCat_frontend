@@ -1,10 +1,10 @@
 import { IComponent } from 'common';
 import * as S from './style';
-export interface ITagProps extends IComponent {
+export interface IBadgeProps extends IComponent {
   inProgessPage: React.ReactChild;
   allPage: React.ReactChild;
 }
-export const Tag: React.FC<ITagProps> = ({ inProgessPage, allPage, ...props }) => {
+export const Badge: React.FC<IBadgeProps> = ({ inProgessPage, allPage, ...props }) => {
   return (
     <S.Wrap {...props}>
       <S.Container>
