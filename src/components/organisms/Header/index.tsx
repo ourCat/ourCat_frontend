@@ -1,4 +1,4 @@
-import { Label } from 'components/atoms';
+import { Image } from 'components/atoms';
 import * as S from './style';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
@@ -9,7 +9,7 @@ export const Header: React.FC<HeaderProps> = props => {
   return (
     <S.Wrap {...props}>
       <S.Content>
-        <Label font={14}>헤더 아이콘</Label>
+        <Image src={'/images/ourCatLogo.png'} width="64px" />
         <FontAwesomeIcon icon={faSearch} />
       </S.Content>
     </S.Wrap>
