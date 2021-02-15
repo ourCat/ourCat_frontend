@@ -11,7 +11,7 @@ export const Header: React.FC<HeaderProps> = props => {
       <S.Container>
         <S.Content>
           <Image src={'/images/ourCatLogo.png'} width="64px" />
-          <FontAwesomeIcon icon={faSearch} />
+          <FontAwesomeIcon icon={faSearch} size="lg" />
         </S.Content>
       </S.Container>
     </S.Wrap>

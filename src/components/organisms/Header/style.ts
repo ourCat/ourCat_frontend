@@ -11,7 +11,7 @@ export const Wrap = styled.header<HeaderProps>`
 `;
 
 export const Container = styled.div`
-  max-width: 440px;
+  max-width: ${props => props.theme.layoutSizes.BODY_MAX_WIDTH};
   height: 100%;
   margin: 0 auto;
   background-color: ${props => props.theme.colors.WHITE};
@@ -19,7 +19,7 @@ export const Container = styled.div`
 
 export const Content = styled.div`
   height: 100%;
-  padding: 0 10px;
+  padding: 0 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;

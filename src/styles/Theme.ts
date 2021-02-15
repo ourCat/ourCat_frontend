@@ -54,7 +54,9 @@ const viewSizes: { [key: string]: string } = {
 };
 
 const layoutSizes: { [key: string]: string } = {
+  BODY_MAX_WIDTH: '440px',
   HEADER: '2.5rem',
+  BOTTOM_NAVIGATION: '3rem',
 };
 
 const Themes = {
