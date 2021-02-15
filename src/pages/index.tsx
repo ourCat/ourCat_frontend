@@ -1,4 +1,4 @@
-import { Label, CheckBox } from 'components';
+import { Label, CheckBox, RecommendList } from 'components';
 
 const Home = () => {
   return (
@@ -8,6 +8,7 @@ const Home = () => {
           하이
         </Label>
       </CheckBox>
+      <RecommendList />
     </>
   );
 };
