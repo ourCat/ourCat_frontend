@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { HeaderProps } from './index';
 
-export const Wrap = styled.header<HeaderProps>`
+export const Wrap = styled.div<HeaderProps>`
   position: fixed;
   width: 100%;
   height: ${props => props.theme.layoutSizes.HEADER};
@@ -10,7 +10,7 @@ export const Wrap = styled.header<HeaderProps>`
   background-color: ${props => props.theme.colors.GRAY[100]};
 `;
 
-export const Container = styled.div`
+export const Container = styled.header`
   max-width: ${props => props.theme.layoutSizes.BODY_MAX_WIDTH};
   height: 100%;
   margin: 0 auto;
