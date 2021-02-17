@@ -6,7 +6,13 @@ import { faBell, faCompass, faPlusSquare, faUser } from '@fortawesome/free-regul
 import { useRouter } from 'next/router';
 import { useCallback, useContext, useEffect, useState } from 'react';
 
-const BottomNavigationDatas: { id: string; url: string; icon: IconDefinition }[] = [
+type DataType = {
+  id: string;
+  url: string;
+  icon: IconDefinition;
+};
+
+const BottomNavigationDatas: DataType[] = [
   {
     id: 'home',
     url: '/',
@@ -42,7 +48,7 @@ export const BottomNavigation: React.FC<BottomNavigationProps> = props => {
   const [selected, setSelected] = useState<string>('home');
 
   useEffect(() => {
-    const defaultSelectedItem = BottomNavigationDatas.find((item): unknown =>
+    const defaultSelectedItem = BottomNavigationDatas.find((item: DataType) =>
       router.pathname.includes(item.id),
     );
     if (defaultSelectedItem) setSelected(defaultSelectedItem.id);
@@ -59,7 +65,7 @@ export const BottomNavigation: React.FC<BottomNavigationProps> = props => {
     <S.Wrap {...props}>
       <S.Container>
         <S.Content>
-          {BottomNavigationDatas.map((item): unknown => (
+          {BottomNavigationDatas.map((item: DataType) => (
             <FontAwesomeIcon
               {...item}
               onClick={onClickIcon}
