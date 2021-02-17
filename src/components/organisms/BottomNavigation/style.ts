@@ -20,13 +20,14 @@ export const Container = styled.div`
 export const Content = styled.div`
   height: 100%;
   display: flex;
-  justify-content: space-between;
-`;
-
-export const IconBox = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: center;
   align-items: center;
-  cursor: pointer;
+  justify-content: space-around;
+
+  & > svg {
+    cursor: pointer;
+
+    :hover {
+      color: ${props => props.theme.colors.MAIN};
+    }
+  }
 `;
