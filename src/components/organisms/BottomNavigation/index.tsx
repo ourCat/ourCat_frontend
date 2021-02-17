@@ -64,6 +64,7 @@ export const BottomNavigation: React.FC<BottomNavigationProps> = props => {
               {...item}
               onClick={onClickIcon}
               color={selected === item.id ? themeContext.colors.MAIN : null}
+              size={'lg'}
             />
           ))}
         </S.Content>
