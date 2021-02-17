@@ -3,8 +3,8 @@ import styled from 'styled-components';
 
 export const Wrap = styled.div<IComponent>`
   ${ComponentMixin};
+  text-align: center;
+  box-sizing: border-box;
 `;
 
-export const LabelContainer = styled.div`
-  text-align: center;
-`;
+export const LabelContainer = styled.div``;

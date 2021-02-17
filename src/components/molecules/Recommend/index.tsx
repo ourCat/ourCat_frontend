@@ -14,7 +14,7 @@ export const Recommend: React.FC<IRecommendProps> = ({
 }) => {
   return (
     <S.Wrap {...props}>
-      <Image src={img} borderRadius={'50%'} {...props} />
+      <Image src={img} borderRadius={'50%'} width={'70%'} display={'block'} margin={'0 auto'} />
       <S.LabelContainer>
         <Label>{labelText}</Label>
       </S.LabelContainer>
