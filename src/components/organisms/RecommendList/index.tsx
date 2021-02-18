@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import { IComponent } from 'common';
 import { Recommend } from 'components';
 import 'slick-carousel/slick/slick.css';
@@ -31,17 +32,29 @@ export interface IRecommendListProps extends IComponent {
 }
 
 export const RecommendList: React.FC<IRecommendListProps> = ({ Datas, ...props }) => {
+  const router = useRouter();
   const settings = {
     infinite: false,
     speed: 500,
     slidesToShow: 5,
     slidesToScroll: 5,
+    isArrow: false,
+  };
+  const handleImgUrl = (url: string) => {
+    router.push(url);
   };
   return (
     <S.Wrap {...props}>
       <S.ReactSlider {...settings}>
         {sampleData.data.map(cat => {
-          return <Recommend img={cat.img} labelText={cat.label} key={cat.id} />;
+          return (
+            <Recommend
+              img={cat.img}
+              labelText={cat.label}
+              onClick={() => handleImgUrl(cat.url)}
+              key={cat.id}
+            />
+          );
         })}
       </S.ReactSlider>
     </S.Wrap>
