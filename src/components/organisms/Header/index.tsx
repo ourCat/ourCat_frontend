@@ -8,10 +8,12 @@ export interface HeaderProps {}
 export const Header: React.FC<HeaderProps> = props => {
   return (
     <S.Wrap {...props}>
-      <S.Content>
-        <Image src={'/images/ourCatLogo.png'} width="64px" />
-        <FontAwesomeIcon icon={faSearch} />
-      </S.Content>
+      <S.Container>
+        <S.Content>
+          <Image src={'/images/ourCatLogo.png'} width="64px" />
+          <FontAwesomeIcon icon={faSearch} size="lg" />
+        </S.Content>
+      </S.Container>
     </S.Wrap>
   );
 };
