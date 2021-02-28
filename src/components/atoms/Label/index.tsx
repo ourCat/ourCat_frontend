@@ -8,8 +8,31 @@ export interface ILabelProps extends IComponent {
   lineThrough?: boolean;
   letterSpacing?: string;
   pointer?: boolean;
+  isNewLine?: boolean;
+  isViewOneLine?: boolean;
 }
 
-export const Label: React.FC<ILabelProps> = props => {
-  return <S.WrapLabel {...props}>{props.children}</S.WrapLabel>;
+export const Label: React.FC<ILabelProps> = ({ isNewLine, isViewOneLine, children, ...rest }) => {
+  /**
+   *  '\n'을 기준으로 개행..
+   */
+  return (
+    <>
+      {isNewLine ? (
+        isViewOneLine ? (
+          String(children)
+            ?.split(/\n/g)
+            .map((line, idx) => (
+              <S.Wrap key={idx} display={'block'} {...rest}>
+                {line}
+              </S.Wrap>
+            ))
+        ) : (
+          <S.Wrap {...rest}>{String(children)?.split(/\n/g)[0]}</S.Wrap>
+        )
+      ) : (
+        <S.Wrap {...rest}>{children}</S.Wrap>
+      )}
+    </>
+  );
 };
