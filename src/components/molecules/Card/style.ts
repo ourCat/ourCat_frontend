@@ -9,18 +9,19 @@ export const Header = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  & > div {
-    display: flex;
-    align-items: center;
+`;
 
-    & > img:first-of-type {
-      margin-right: 0.7rem;
-      border-radius: 30%;
-    }
+export const Profile = styled.div`
+  display: flex;
+  align-items: center;
+
+  & > img:first-of-type {
+    margin-right: 0.7rem;
+    border-radius: 30%;
   }
 `;
 
-export const Content = styled.div`
+export const CardBody = styled.div`
   & > :not(:first-child) {
     padding: 0.5rem 1rem;
     display: flex;
@@ -36,7 +37,7 @@ export const TagBox = styled.div`
   }
 `;
 
-export const FirstLayer = styled.div`
+export const CardInfo = styled.div`
   & > div {
     :not(:last-of-type) {
       margin-right: 1rem;
@@ -47,12 +48,12 @@ export const FirstLayer = styled.div`
   }
 `;
 
-export const SecondLayer = styled.div`
+export const CardContent = styled.div`
   & > span:last-of-type {
     margin-left: 1rem;
   }
 `;
-export const ThirdLayer = styled.div`
+export const CardComment = styled.div`
   & > {
     img {
       margin-right: 0.5rem;

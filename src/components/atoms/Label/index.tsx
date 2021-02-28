@@ -1,6 +1,7 @@
 import React from 'react';
-import * as S from './style';
 import { IComponent } from 'common';
+import * as S from './style';
+
 export interface ILabelProps extends IComponent {
   onClick?: React.MouseEventHandler<HTMLElement>;
 
@@ -18,21 +19,19 @@ export const Label: React.FC<ILabelProps> = ({ isNewLine, isViewOneLine, childre
    */
   return (
     <>
-      {isNewLine ? (
-        isViewOneLine ? (
-          String(children)
+      {isNewLine && !isViewOneLine && (
+        <S.LabelBox>
+          {String(children)
             ?.split(/\n/g)
             .map((line, idx) => (
               <S.Wrap key={idx} display={'block'} {...rest}>
                 {line}
               </S.Wrap>
-            ))
-        ) : (
-          <S.Wrap {...rest}>{String(children)?.split(/\n/g)[0]}</S.Wrap>
-        )
-      ) : (
-        <S.Wrap {...rest}>{children}</S.Wrap>
+            ))}
+        </S.LabelBox>
       )}
+      {isNewLine && isViewOneLine && <S.Wrap {...rest}>{String(children)?.split(/\n/g)[0]}</S.Wrap>}
+      {!isNewLine && <S.Wrap {...rest}>{children}</S.Wrap>}
     </>
   );
 };

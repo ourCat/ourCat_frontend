@@ -10,3 +10,5 @@ export const Wrap = styled.span<ILabelProps>`
   text-decoration: ${props => (props.lineThrough ? 'line-through' : 'none')};
   cursor: ${props => (props.pointer ? 'pointer' : 'default')};
 `;
+
+export const LabelBox = styled.div``;
