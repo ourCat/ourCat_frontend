@@ -21,7 +21,7 @@ export const Card: React.FC<CardProps> = ({
   title = '뚱땅이',
   bgImgSrc = ICON.AVATAR,
   content = '나는야 김뚱땅. 오늘도 내 짝을 찾는다.',
-  date = new Date(),
+  date,
   heartCount = 0,
   commentCount = 0,
   bookmarkCount = 0,
