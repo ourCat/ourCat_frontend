@@ -38,9 +38,9 @@ export const RecommendList: React.FC<IRecommendListProps> = ({ Datas, ...props }
     speed: 500,
     slidesToShow: 5,
     slidesToScroll: 5,
-    isArrow: false,
+    arrows: false,
   };
-  const handleImgUrl = (url: string) => {
+  const onImgClick = (url: string) => {
     router.push(url);
   };
   return (
@@ -51,7 +51,7 @@ export const RecommendList: React.FC<IRecommendListProps> = ({ Datas, ...props }
             <Recommend
               img={cat.img}
               labelText={cat.label}
-              onClick={() => handleImgUrl(cat.url)}
+              onClick={() => onImgClick(cat.url)}
               key={cat.id}
             />
           );
