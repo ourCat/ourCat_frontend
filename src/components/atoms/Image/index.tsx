@@ -3,7 +3,7 @@ import * as S from './style';
 
 export interface ImageProps extends IComponent {
   src?: string;
-  pointer?: string;
+  pointer?: boolean;
   onClick?: React.MouseEventHandler<HTMLImageElement>;
 }
 

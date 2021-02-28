@@ -66,6 +66,7 @@ export const BottomNavigation: React.FC<BottomNavigationProps> = props => {
         <S.Content>
           {BottomNavigationDatas.map((item: DataType) => (
             <FontAwesomeIcon
+              key={item.id}
               {...item}
               onClick={() => onClickIcon(item.id)}
               color={selected === item.id ? themeContext.colors.MAIN : null}
