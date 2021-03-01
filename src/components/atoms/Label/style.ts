@@ -2,7 +2,7 @@ import { ComponentMixin } from 'common';
 import styled from 'styled-components';
 import { ILabelProps } from './';
 
-export const Wrap = styled.span<ILabelProps>`
+export const Wrap = styled.div<ILabelProps>`
   ${ComponentMixin}
 
   background-color: ${props => props.backgroundColor && props.backgroundColor};
