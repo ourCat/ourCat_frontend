@@ -17,14 +17,14 @@ export const userSlice = createSlice({
   initialState,
 
   reducers: {
-    logOut(state, action) {
+    logOut(state) {
       state.data = null;
       state.isLoggedIn = false;
     },
   },
   extraReducers: builder => {
     builder
-      .addCase(login.pending, (state, action) => {
+      .addCase(login.pending, state => {
         state.isLoggingIn = true;
         state.isLoggedIn = false;
       })
@@ -33,7 +33,7 @@ export const userSlice = createSlice({
         state.isLoggingIn = false;
         state.isLoggedIn = true;
       })
-      .addCase(login.rejected, (state, action) => {
+      .addCase(login.rejected, state => {
         state.data = null;
         state.isLoggingIn = false;
         state.isLoggedIn = false;
