@@ -1,4 +1,8 @@
+
 import { Label, CheckBox, RecommendList, Profile, Card } from 'components';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { login } from 'actions';
 import styled from 'styled-components';
 export const Wrap = styled.div`
   min-height: 100vh;
@@ -22,6 +26,13 @@ const Home = () => {
     createAt: '2021-02-02',
     updateAt: '2021-02-23',
   };
+
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(login());
+  }, []);
+
+
   return (
     <Wrap>
       <RecommendList />
