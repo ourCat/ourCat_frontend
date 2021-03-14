@@ -1,4 +1,4 @@
-import { Label, CheckBox, RecommendList, Profile, Card, ThumbnailList } from 'components';
+import { RecommendList, Profile, Card, ThumbnailList } from 'components';
 import { sample, ThumbnailListData } from 'common';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
@@ -18,11 +18,6 @@ const Home = () => {
   return (
     <Wrap>
       <RecommendList />
-      <CheckBox hasLabel isChecked>
-        <Label font={14} weight="bold" margin={'0 0 0 10px'} height="1080px">
-          하이
-        </Label>
-      </CheckBox>
       <Profile isCat={false} data={sample} />
       <ThumbnailList data={ThumbnailListData} />
       <Card
