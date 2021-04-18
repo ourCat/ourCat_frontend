@@ -1,19 +1,15 @@
 import * as S from './style';
-import { RecommendList, Profile, Card, ThumbnailList } from 'components';
-import { sample, ThumbnailListData } from 'common';
+import { RecommendList, Card, ThumbnailList } from 'components';
+import { ThumbnailListData } from 'common';
 
 export interface HomeTemplateProps {}
 
 export const HomeTemplate: React.FC<HomeTemplateProps> = ({}) => {
-
-
-
-    
   return (
     <S.Wrap>
       <RecommendList />
-      <Profile isCat={false} data={sample} />
       <Card
+        id={1}
         title={'뚱땅이'}
         date={new Date()}
         content={'나는야 김뚱땅. 오늘도 내 짝을 찾는다. \n 대체 어디에 있을까?'}
@@ -22,6 +18,7 @@ export const HomeTemplate: React.FC<HomeTemplateProps> = ({}) => {
         bookmarkCount={80}
       />
       <Card
+        id={2}
         title={'둥구'}
         date={new Date()}
         content={'거기 츄르 있는 사람?\n 츄르 한대만 물자...\n 츄르 한 대 정도는 괜찮잖아?'}
