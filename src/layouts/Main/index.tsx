@@ -5,12 +5,12 @@ export interface MainLayoutProps {}
 
 export const MainLayout: React.FC<MainLayoutProps> = props => {
   return (
-    <S.WrapMainLayout {...props}>
-      <S.Container>
+    <S.MainBackgroundImage>
+      <S.WrapMainLayout {...props}>
         <Header />
         {props.children}
         <BottomNavigation />
-      </S.Container>
-    </S.WrapMainLayout>
+      </S.WrapMainLayout>
+    </S.MainBackgroundImage>
   );
 };
