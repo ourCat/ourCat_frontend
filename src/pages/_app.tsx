@@ -9,6 +9,8 @@ import { MainLayout } from 'layouts';
 
 import { Provider } from 'react-redux';
 import { store } from 'app/store';
+import 'swiper/swiper.scss';
+import 'swiper/swiper.min.css';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (

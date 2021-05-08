@@ -1,5 +1,5 @@
 import { IComponent } from 'common';
-import { Image, Label } from 'components';
+import { Label } from 'components';
 import * as S from './style';
 
 export interface IRecommendProps extends IComponent {
@@ -16,7 +16,13 @@ export const Recommend: React.FC<IRecommendProps> = ({
 }) => {
   return (
     <S.Wrap onClick={onClick} {...props}>
-      <Image src={img} borderRadius={'50%'} width={'70%'} display={'block'} margin={'0 auto'} />
+      <S.RecommendImage
+        src={img}
+        borderRadius={'50%'}
+        width={'70%'}
+        display={'block'}
+        margin={'0 auto'}
+      />
       <S.LabelContainer>
         <Label>{labelText}</Label>
       </S.LabelContainer>

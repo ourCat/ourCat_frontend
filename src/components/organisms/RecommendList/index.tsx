@@ -1,8 +1,8 @@
 import { useRouter } from 'next/router';
 import { IComponent } from 'common';
 import { Recommend } from 'components';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
 import * as S from './style';
 
 const sampleData = {
@@ -33,30 +33,36 @@ export interface IRecommendListProps extends IComponent {
 
 export const RecommendList: React.FC<IRecommendListProps> = ({ Datas, ...props }) => {
   const router = useRouter();
-  const settings = {
-    infinite: false,
-    speed: 500,
-    slidesToShow: 5,
-    slidesToScroll: 5,
-    arrows: false,
-  };
+
   const onImgClick = (url: string) => {
     router.push(url);
   };
+
   return (
-    <S.Wrap {...props}>
-      <S.ReactSlider {...settings}>
+    <S.Wrap>
+      <Swiper
+        slidesPerView={5}
+        spaceBetween={10}
+        freeMode={true}
+        pagination={{
+          clickable: true,
+        }}
+        scrollbar={{ draggable: true }}
+        className="mySwiper"
+      >
         {sampleData.data.map(cat => {
           return (
-            <Recommend
-              img={cat.img}
-              labelText={cat.label}
-              onClick={() => onImgClick(cat.url)}
-              key={cat.id}
-            />
+            <SwiperSlide key={cat.id}>
+              <Recommend
+                img={cat.img}
+                labelText={cat.label}
+                onClick={() => onImgClick(cat.url)}
+                key={cat.id}
+              />
+            </SwiperSlide>
           );
         })}
-      </S.ReactSlider>
+      </Swiper>
     </S.Wrap>
   );
 };

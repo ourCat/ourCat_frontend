@@ -23,9 +23,11 @@
     "react-dom": "^16.12.0",
     "react-redux": "^7.2.2",
     "react-slick": "^0.28.0",
+    "sass": "^1.32.12",
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.2.1",
-    "styled-reset": "^4.3.4"
+    "styled-reset": "^4.3.4",
+    "swiper": "^6.5.9"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
