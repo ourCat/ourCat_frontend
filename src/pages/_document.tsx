@@ -37,7 +37,12 @@ class MyDocument extends Document<StyledProps> {
   render() {
     return (
       <Html>
-        <Head />
+        <Head>
+          <script
+            type="text/javascript"
+            src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.KAKAO_JAVASCRIPT_KEY}&libraries=services,clusterer`}
+          />
+        </Head>
         <body>
           <Main />
           <NextScript />

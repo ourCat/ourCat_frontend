@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import * as S from './style';
 import { IComponent } from 'common';
 export interface IInputProps extends IComponent {
-  ref?: React.RefObject<HTMLInputElement>;
+  ref?: any;
   type?: string;
   defaultValue?: string | string[] | number;
   placeholder?: string;
@@ -16,6 +16,10 @@ export interface IInputProps extends IComponent {
   onBlur?: React.ChangeEventHandler<HTMLInputElement>;
 }
 
-export const Input: React.FC<IInputProps> = props => {
-  return <S.WrapInput {...props}>{props.children}</S.WrapInput>;
-};
+export const Input: React.FC<IInputProps> = forwardRef((props, ref) => {
+  return (
+    <S.WrapInput ref={ref} {...props}>
+      {props.children}
+    </S.WrapInput>
+  );
+});
