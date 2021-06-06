@@ -6,9 +6,10 @@ import { AppProps } from 'next/app';
 import { ThemeProvider } from 'styled-components';
 import Themes from 'styles/Theme';
 import { MainLayout } from 'layouts';
-
+import { ToastComponentContainer } from 'components';
 import { Provider } from 'react-redux';
 import { store } from 'app/store';
+import 'react-toastify/dist/ReactToastify.css';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
@@ -24,6 +25,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
       <Provider store={store}>
         <MainLayout>
           <Component {...pageProps} />
+          <ToastComponentContainer />
         </MainLayout>
       </Provider>
     </ThemeProvider>
