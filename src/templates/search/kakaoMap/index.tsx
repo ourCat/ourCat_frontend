@@ -1,5 +1,5 @@
 import * as S from './style';
-import { Label } from 'components';
+import { Label, Image } from 'components';
 import { useEffect, useRef, useState } from 'react';
 
 export interface KakaoMapProps {}
@@ -25,6 +25,7 @@ export const KakaoMap: React.FC<KakaoMapProps> = ({
 }: KakaoMapProps) => {
   const kakaoMapRef = useRef<HTMLDivElement>(null);
   const [error, setError] = useState('');
+  const [clickedItem, setClickedItem] = useState('');
 
   useEffect(() => {
     const kakaoMapElement = kakaoMapRef.current;
@@ -60,9 +61,9 @@ export const KakaoMap: React.FC<KakaoMapProps> = ({
         minLevel: 8,
       });
 
-      const imageSrc = '/images/img.png';
-      const imageSize = new kakao.maps.Size(48, 48);
-      const imageOption = { offset: new kakao.maps.Point(24, 24) };
+      const imageSrc = '/images/place.PNG';
+      const imageSize = new kakao.maps.Size(36, 36);
+      const imageOption = { offset: new kakao.maps.Point(18, 18) };
       const makerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption);
 
       // 인포윈도우를 표시하는 클로저를 만드는 함수
@@ -94,6 +95,10 @@ export const KakaoMap: React.FC<KakaoMapProps> = ({
           makeOverListener(kakaoMap, marker, infoWindow),
         );
         kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(infoWindow));
+        kakao.maps.event.addListener(marker, 'click', function () {
+          console.log(`${position.cat}`);
+          setClickedItem(`${position.cat}`);
+        });
         return marker;
       });
 
@@ -108,6 +113,18 @@ export const KakaoMap: React.FC<KakaoMapProps> = ({
         <Label font={14} color="RED" margin={'5px 0 0'}>
           {error}
         </Label>
+      )}
+      {clickedItem && (
+        <S.CatDescription>
+          <S.CatDescriptionContent>
+            <Image src={'/images/place.PNG'} width="36px" margin={'0 5px 0 0'} />
+            <Label font={16} weight="bold" margin={'0 20px 0 0'}>
+              {clickedItem}
+            </Label>
+            <Image src={'/images/heart.PNG'} width="12px" margin={'0 2px 0 0'} />
+            <Label font={14}>팔로워 1.7k</Label>
+          </S.CatDescriptionContent>
+        </S.CatDescription>
       )}
     </S.Wrap>
   );
