@@ -28,7 +28,7 @@ export const SearchTemplate: React.FC<SearchTemplateProps> = ({}) => {
     <S.Wrap>
       <Input
         placeholder="고양이를 찾아보세요."
-        margin={'0 0 10px 0'}
+        padding={'10px'}
         onKeyPress={e => e.key === 'Enter' && handleSearchButtonClick()}
         ref={searchInputRef}
       />
