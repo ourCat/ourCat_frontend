@@ -1,12 +1,16 @@
-import { RecommendList, Card, showToast } from 'components';
+import { RecommendList, Card, showToast, ModalPortal } from 'components';
+import { useState } from 'react';
 import * as S from './style';
 
 export interface HomeTemplateProps {}
 
 export const HomeTemplate: React.FC<HomeTemplateProps> = ({}) => {
+  const [isLogin, setIsLogin] = useState<boolean>(false);
+
   const onClickToastAction = () => {
     showToast('hello~ spring');
   };
+
   return (
     <S.Wrap>
       <RecommendList />
@@ -29,6 +33,13 @@ export const HomeTemplate: React.FC<HomeTemplateProps> = ({}) => {
         bookmarkCount={110}
       />
       <button onClick={onClickToastAction}>toast action</button>
+      <button onClick={() => setIsLogin(true)}>로그인 모달</button>
+      {isLogin ? (
+        <ModalPortal onClickCloseModal={() => setIsLogin(false)}>
+          <S.ModalPotalComtainer>ModalPortal</S.ModalPotalComtainer>
+        </ModalPortal>
+      ) : null}
+      <div id="root-modal" />
     </S.Wrap>
   );
 };
