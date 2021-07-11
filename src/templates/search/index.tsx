@@ -26,12 +26,16 @@ export const SearchTemplate: React.FC<SearchTemplateProps> = ({}) => {
 
   return (
     <S.Wrap>
-      <Input
-        placeholder="고양이를 찾아보세요."
-        padding={'10px'}
-        onKeyPress={e => e.key === 'Enter' && handleSearchButtonClick()}
-        ref={searchInputRef}
-      />
+      <S.InputBox>
+        <Input
+          placeholder="고양이를 찾아보세요."
+          padding={'10px'}
+          onKeyPress={e => e.key === 'Enter' && handleSearchButtonClick()}
+          border={'1px solid #111'}
+          borderRadius={'3px'}
+          ref={searchInputRef}
+        />
+      </S.InputBox>
       <Button label="검색" onClick={handleSearchButtonClick} filled={false} />
       {submitKeyword && <KakaoMap {...args} />}
     </S.Wrap>
