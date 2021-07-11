@@ -18,7 +18,7 @@ export const MyPageTemplate: React.FC<IMyPageTemplateProps> = () => {
       {isLogin ? (
         <S.MyPageWrap>mypage</S.MyPageWrap>
       ) : (
-        <LoginModal isLogin={isLogin} onClickCloseModal={() => setIsLogin(!isLogin)} />
+        <LoginModal isLogin={isLogin} handleCloseModal={() => setIsLogin(!isLogin)} />
       )}
       <div id="root-modal" />
     </S.MyPageWrap>

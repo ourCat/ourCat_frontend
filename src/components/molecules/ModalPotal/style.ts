@@ -12,12 +12,13 @@ export const ModalPotalWrap = styled.div`
   margin: 0 auto;
   top: 0;
   background-color: white;
-  .modal-background {
-    position: absolute;
-    width: 100%;
-    min-width: 440px;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 10;
-  }
+`;
+
+export const ModalDim = styled.div`
+  position: absolute;
+  width: 100%;
+  min-width: 440px;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
 `;

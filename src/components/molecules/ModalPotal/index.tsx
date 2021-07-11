@@ -4,10 +4,10 @@ import * as S from './style';
 
 interface IModalPotalProps {
   children: React.ReactNode;
-  onClickCloseModal: () => void;
+  handleCloseModal: () => void;
 }
 
-export const ModalPortal: React.FC<IModalPotalProps> = ({ children, onClickCloseModal }) => {
+export const ModalPortal: React.FC<IModalPotalProps> = ({ children, handleCloseModal }) => {
   const ref = useRef<Element | null>();
   const [mounted, setMounted] = useState<boolean>(false);
 
@@ -22,7 +22,7 @@ export const ModalPortal: React.FC<IModalPotalProps> = ({ children, onClickClose
   if (ref.current && mounted) {
     return createPortal(
       <S.ModalPotalWrap>
-        <div className="modal-background" onClick={onClickCloseModal} />
+        <S.ModalDim onClick={handleCloseModal} />
         {children}
       </S.ModalPotalWrap>,
       ref.current,
