@@ -33,12 +33,6 @@ export const HomeTemplate: React.FC<HomeTemplateProps> = ({}) => {
         bookmarkCount={110}
       />
       <button onClick={onClickToastAction}>toast action</button>
-      <button onClick={() => setIsLogin(true)}>로그인 모달</button>
-      {isLogin ? (
-        <ModalPortal onClickCloseModal={() => setIsLogin(false)}>
-          <S.ModalPotalComtainer>ModalPortal</S.ModalPotalComtainer>
-        </ModalPortal>
-      ) : null}
       <div id="root-modal" />
     </S.Wrap>
   );

@@ -34,8 +34,8 @@ const BottomNavigationDatas: DataType[] = [
     icon: faBell,
   },
   {
-    id: 'me',
-    url: '/me',
+    id: 'mypage',
+    url: '/mypage',
     icon: faUser,
   },
 ];

@@ -20,15 +20,4 @@ export const ModalPotalWrap = styled.div`
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 10;
   }
-
-  .modal_content{
-    display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 70vw;
-  height: 70vh;
-  border-radius: 10px;
-  background-color: white;
-  z-index: 11;
-  }
 `;

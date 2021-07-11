@@ -1,13 +1,26 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { LoginModal } from 'components';
 import * as S from './style';
 
-interface IMyPageProps {}
+interface IMyPageTemplateProps {}
 
-export const MyPage:React.FC<IMyPageProps> = () => {
-    useEffect(()=>{
-        // 로그인 o => 화면 렌더링
-        // 로그인 x => 로그인모달창
-    },[])
+export const MyPageTemplate: React.FC<IMyPageTemplateProps> = () => {
+  const [isLogin, setIsLogin] = useState(false);
 
-    return <S.MyPageWrap></S.MyPageWrap>
-}
+  useEffect(() => {
+    // 로그인 o => 화면 렌더링
+    // 로그인 x => 로그인모달창
+    //document.cookie = 'userSession' + '=' + escape('springSession');
+  }, []);
+
+  return (
+    <S.MyPageWrap>
+      {isLogin ? (
+        <S.MyPageWrap>mypage</S.MyPageWrap>
+      ) : (
+        <LoginModal isLogin={isLogin} onClickCloseModal={() => setIsLogin(!isLogin)} />
+      )}
+      <div id="root-modal" />
+    </S.MyPageWrap>
+  );
+};

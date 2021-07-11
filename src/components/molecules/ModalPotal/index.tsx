@@ -23,7 +23,7 @@ export const ModalPortal: React.FC<IModalPotalProps> = ({ children, onClickClose
     return createPortal(
       <S.ModalPotalWrap>
         <div className="modal-background" onClick={onClickCloseModal} />
-        <div className="modal_content">{children}</div>
+        {children}
       </S.ModalPotalWrap>,
       ref.current,
     );
