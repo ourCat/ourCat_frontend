@@ -5,4 +5,6 @@ export const PAGE = {
   ALARM: '/alarm',
   ME: '/me',
   CAT_DETAIL: (id: number) => `/cat/${id}`,
+
+  NAVER_CALLBACK: 'http://localhost:3000/callback/naver',
 };
