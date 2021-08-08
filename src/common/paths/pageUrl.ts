@@ -7,4 +7,5 @@ export const PAGE = {
   CAT_DETAIL: (id: number) => `/cat/${id}`,
 
   NAVER_CALLBACK: 'http://localhost:3000/callback/naver',
+  KAKAO_CALLBACK: 'http://localhost:3000/callback/kakao',
 };
