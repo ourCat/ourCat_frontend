@@ -6,11 +6,14 @@ export interface ButtonProps extends IComponent {
   label?: string;
   filled: boolean;
   disabled?: boolean;
+  icon?: any;
+  backgroundColor?: string;
 }
 
 export const Button: React.FC<ButtonProps> = ({ label = 'Button', onClick, ...props }) => {
   return (
     <S.Wrap {...props} onClick={onClick}>
+      {props.icon && props.icon}
       {label}
     </S.Wrap>
   );

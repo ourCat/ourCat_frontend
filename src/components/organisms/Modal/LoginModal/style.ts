@@ -1,5 +1,9 @@
+import { Label } from 'components/atoms';
 import styled from 'styled-components';
 
+/**
+ *모달 컨텐츠 배경
+ */
 export const LoginModalWarp = styled.div`
   display: flex;
   flex-direction: column;
@@ -21,26 +25,21 @@ export const LoginLogoContainer = styled.div`
   margin-bottom: 2rem;
 `;
 
-export const LoginLabelContainer = styled.div`
+export const LoginSocialContainer = styled.div`
   display: flex;
-  padding: 4px 0;
-  .flex_label {
-    flex: 1;
-  }
-  .flex_input {
-    flex: 2;
-  }
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 16px;
 `;
 
+/**
+ * space bar
+ */
 export const LoginSpaceBar = styled.div`
   width: 100%;
   height: 1px;
-  background-color: gray;
-  margin: 8px 0;
-`;
-
-export const LoginSocialContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
+  background-color: ${props => props.theme.colors.GRAY[400]};
+  margin: 1rem 0;
 `;
