@@ -22,24 +22,35 @@ export const LoginLogoContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 `;
 
 export const LoginSocialContainer = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
   padding: 0 16px;
 `;
 
 /**
  * space bar
  */
+export const LoginModalSpaceContainer = styled.div`
+  width: 100%;
+  display: flex;
+  color: ${props => props.theme.colors.GRAY[200]};
+  margin: 2rem 0;
+
+  .space_text {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+`;
 export const LoginSpaceBar = styled.div`
   width: 100%;
-  height: 1px;
-  background-color: ${props => props.theme.colors.GRAY[400]};
-  margin: 1rem 0;
+  border-bottom: 1px solid ${props => props.theme.colors.GRAY[400]};
 `;

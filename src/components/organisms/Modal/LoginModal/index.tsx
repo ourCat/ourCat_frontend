@@ -39,7 +39,7 @@ export const LoginModal: React.FC<ILoginModalProps> = props => {
                 padding="8px 0"
                 borderRadius="4px"
                 width="100%"
-                margin="0 0 1rem 0"
+                margin="0 0 0.5rem 0"
                 backgroundColor="#0D1117"
               />
               <Button
@@ -49,7 +49,7 @@ export const LoginModal: React.FC<ILoginModalProps> = props => {
                 padding="8px 0"
                 borderRadius="4px"
                 width="100%"
-                margin="0 0 1rem 0"
+                margin="0 0 0.5rem 0"
                 backgroundColor="#2CAE00"
               />
               <Button
@@ -59,7 +59,7 @@ export const LoginModal: React.FC<ILoginModalProps> = props => {
                 padding="8px 0"
                 borderRadius="4px"
                 width="100%"
-                margin="0 0 1rem 0"
+                margin="0 0 0.5rem 0"
                 backgroundColor="#F2DA00"
               />
               <Button
@@ -72,7 +72,12 @@ export const LoginModal: React.FC<ILoginModalProps> = props => {
                 backgroundColor="#4285F4"
               />
             </S.LoginSocialContainer>
-            <S.LoginSpaceBar />
+            {/* space bar */}
+            <S.LoginModalSpaceContainer>
+              <S.LoginSpaceBar />
+              <Label className="space_text">회원가입</Label>
+              <S.LoginSpaceBar />
+            </S.LoginModalSpaceContainer>
             <S.LoginSocialContainer>
               <Button
                 onClick={handlerSignUp}
