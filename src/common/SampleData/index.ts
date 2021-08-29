@@ -15,32 +15,3 @@ export const sample = {
   createAt: '2021-02-02',
   updateAt: '2021-02-23',
 };
-
-export const ThumbnailListData = {
-  data: [
-    { id: 1, imgUrl: 'images/img.png', url: '/', type: 'img' },
-    { id: 1, imgUrl: 'images/img.png', url: '/', type: 'video' },
-    { id: 1, imgUrl: 'images/img.png', url: '/', type: 'video' },
-    { id: 1, imgUrl: 'images/img.png', url: '/', type: 'video' },
-    { id: 1, imgUrl: 'images/img.png', url: '/', type: 'img' },
-    { id: 1, imgUrl: 'images/img.png', url: '/', type: 'img' },
-    { id: 1, imgUrl: 'images/img.png', url: '/', type: 'img' },
-    { id: 1, imgUrl: 'images/img.png', url: '/', type: 'img' },
-    { id: 1, imgUrl: 'images/img.png', url: '/', type: 'img' },
-    { id: 1, imgUrl: 'images/img.png', url: '/', type: 'img' },
-    { id: 1, imgUrl: 'images/img.png', url: '/', type: 'img' },
-    { id: 1, imgUrl: 'images/img.png', url: '/', type: 'img' },
-    { id: 1, imgUrl: 'images/img.png', url: '/', type: 'img' },
-    { id: 1, imgUrl: 'images/img.png', url: '/', type: 'img' },
-    { id: 1, imgUrl: 'images/img.png', url: '/', type: 'img' },
-    { id: 1, imgUrl: 'images/img.png', url: '/', type: 'img' },
-    { id: 1, imgUrl: 'images/img.png', url: '/', type: 'img' },
-    { id: 1, imgUrl: 'images/img.png', url: '/', type: 'img' },
-    { id: 1, imgUrl: 'images/img.png', url: '/', type: 'img' },
-    { id: 1, imgUrl: 'images/img.png', url: '/', type: 'img' },
-    { id: 1, imgUrl: 'images/img.png', url: '/', type: 'img' },
-    { id: 1, imgUrl: 'images/img.png', url: '/', type: 'img' },
-    { id: 1, imgUrl: 'images/img.png', url: '/', type: 'img' },
-    { id: 1, imgUrl: 'images/img.png', url: '/', type: 'img' },
-  ],
-};

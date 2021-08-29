@@ -1,10 +1,9 @@
-import { Label, CheckBox, RecommendList, Profile, Card, ThumbnailList } from 'components';
-import { sample, ThumbnailListData } from 'common';
+import { Label, CheckBox, RecommendList, Profile, Card } from 'components';
+import { sample } from 'common';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { login } from 'actions';
 import styled from 'styled-components';
-
 export const Wrap = styled.div`
   min-height: 100vh;
 `;
@@ -24,7 +23,6 @@ const Home = () => {
         </Label>
       </CheckBox>
       <Profile isCat={false} data={sample} />
-      <ThumbnailList data={ThumbnailListData} />
       <Card
         title={'뚱땅이'}
         date={new Date()}
