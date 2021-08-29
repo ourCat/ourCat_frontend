@@ -7,9 +7,6 @@ import { ThemeProvider } from 'styled-components';
 import Themes from 'styles/Theme';
 import { MainLayout } from 'layouts';
 
-import { Provider } from 'react-redux';
-import { store } from 'app/store';
-
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <ThemeProvider theme={Themes}>
@@ -21,11 +18,9 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         />
       </Head>
       <GlobalStyles />
-      <Provider store={store}>
-        <MainLayout>
-          <Component {...pageProps} />
-        </MainLayout>
-      </Provider>
+      <MainLayout>
+        <Component {...pageProps} />
+      </MainLayout>
     </ThemeProvider>
   );
 };

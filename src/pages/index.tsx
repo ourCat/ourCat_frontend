@@ -1,18 +1,10 @@
 import { Card, RecommendList } from 'components';
-import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { login } from 'actions';
 import styled from 'styled-components';
 export const Wrap = styled.div`
   min-height: 100vh;
 `;
 
 const Home = () => {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(login());
-  }, []);
-
   return (
     <Wrap>
       <RecommendList />
