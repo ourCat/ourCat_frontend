@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 import { IComponent } from 'common';
-import { Image, Button, Label } from 'components';
+import { Image, Button } from 'components';
 import * as S from './style';
 
 export interface IProfileProps extends IComponent {
@@ -16,21 +16,15 @@ export const Profile: React.FC<IProfileProps> = ({ isCat, data, ...props }) => {
         {data.profileContent.map((content: any) => {
           return (
             <S.ProfileTextContianer key={content.id}>
-              <Label font={20} pointer={true}>
-                {content.count}
-              </Label>
-              <Label font={13} pointer={true}>
-                {content.name}
-              </Label>
+              <S.ProfileCounter>{content.count}</S.ProfileCounter>
+              <S.ProfileText>{content.name}</S.ProfileText>
             </S.ProfileTextContianer>
           );
         })}
       </S.ProfileImageContainer>
 
       <S.ProfileContentContainer>
-        <Label font={18} margin={'0 0 0.2rem 0'}>
-          {data.name}
-        </Label>
+        <S.ProfileName>{data.name}</S.ProfileName>
         <S.TagContainer>
           {data.tag.map((tag: any) => {
             return (
@@ -41,10 +35,8 @@ export const Profile: React.FC<IProfileProps> = ({ isCat, data, ...props }) => {
             );
           })}
         </S.TagContainer>
-        <Label font={14} margin={'0 0 0.2rem 0'}>
-          {data.description}
-        </Label>
-        <Label font={12} color={'#999999'}>{`최근 업로드된 날짜 : ${data.updateAt}`}</Label>
+        <S.Description>{data.description}</S.Description>
+        <S.UpdateAt>{`최근 업로드된 날짜 : ${data.updateAt}`}</S.UpdateAt>
       </S.ProfileContentContainer>
 
       <S.ProfileButtonContainer>
@@ -55,7 +47,7 @@ export const Profile: React.FC<IProfileProps> = ({ isCat, data, ...props }) => {
               filled
               borderRadius={'0.5rem'}
               padding={'0.2rem 2rem'}
-              margin={'0 0.5rem 0 0'}
+              margin={'0 1rem 0 0'}
             />
             <Button label={'업로드'} filled borderRadius={'0.5rem'} padding={'0.2rem 2rem'} />
           </Fragment>
@@ -66,7 +58,7 @@ export const Profile: React.FC<IProfileProps> = ({ isCat, data, ...props }) => {
             borderRadius={'0.5rem'}
             padding={'0.2rem 0'}
             width={'100%'}
-            margin={'0 0.5rem 0 0'}
+            margin={'0 1rem 0 0'}
           />
         )}
       </S.ProfileButtonContainer>
