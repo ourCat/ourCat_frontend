@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { BottomNavigationProps } from './index';
 
 export const Wrap = styled.div<BottomNavigationProps>`
-  position: sticky;
+  position: fixed;
   width: 100%;
   height: ${props => props.theme.layoutSizes.BOTTOM_NAVIGATION};
   bottom: 0px;

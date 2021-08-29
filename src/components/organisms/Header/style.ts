@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { HeaderProps } from './index';
 
 export const Wrap = styled.div<HeaderProps>`
-  position: sticky;
+  position: fixed;
   width: 100%;
   height: ${props => props.theme.layoutSizes.HEADER};
   top: 0px;
