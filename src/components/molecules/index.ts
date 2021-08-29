@@ -1,1 +1,1 @@
-export * from './Recommend';
+export {};
