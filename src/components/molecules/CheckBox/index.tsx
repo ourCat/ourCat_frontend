@@ -43,7 +43,7 @@ export const CheckBox: React.FC<CheckBoxProps> = ({
             <FontAwesomeIcon icon={faSquare} />
           </S.IconContainer>
         )}
-        {hasLabel ? <>{children}</> : null}
+        {hasLabel ? { children } : null}
       </S.CheckBoxLabel>
     </S.Wrap>
   );
