@@ -3,16 +3,6 @@ import reset from 'styled-reset';
 
 const GlobalStyles = createGlobalStyle`
     ${reset};
-    input { 
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      appearance: none;
-
-      &:focus, &:active {
-        outline: none;
-      } 
-      border: none;
-    }
     
     /**
       SpoqaHanSans
