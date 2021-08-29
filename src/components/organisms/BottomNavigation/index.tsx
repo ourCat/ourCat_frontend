@@ -55,9 +55,10 @@ export const BottomNavigation: React.FC<BottomNavigationProps> = props => {
     else setSelected('home');
   }, []);
 
-  const onClickIcon = useCallback((id: string) => {
-    setSelected(id);
-    router.push(`/${id === 'home' ? '' : id}`);
+  const onClickIcon = useCallback((e: React.MouseEvent<SVGSVGElement, MouseEvent>) => {
+    if (!e.currentTarget.id) return;
+    setSelected(e.currentTarget.id);
+    router.push(`/${e.currentTarget.id === 'home' ? '' : e.currentTarget.id}`);
   }, []);
 
   return (
@@ -67,7 +68,7 @@ export const BottomNavigation: React.FC<BottomNavigationProps> = props => {
           {BottomNavigationDatas.map((item: DataType) => (
             <FontAwesomeIcon
               {...item}
-              onClick={() => onClickIcon(item.id)}
+              onClick={onClickIcon}
               color={selected === item.id ? themeContext.colors.MAIN : null}
               size={'lg'}
             />
