@@ -8,7 +8,6 @@ export const Wrap = styled.div<BottomNavigationProps>`
   bottom: 0px;
   left: 0px;
   background-color: ${props => props.theme.colors.GRAY[100]};
-  z-index: ${props => props.theme.zIndex.BOTTOM_NAVIGATION};
 `;
 
 export const Container = styled.div`

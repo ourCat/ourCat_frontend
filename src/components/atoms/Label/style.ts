@@ -2,7 +2,7 @@ import { ComponentMixin } from 'common';
 import styled from 'styled-components';
 import { ILabelProps } from './';
 
-export const Wrap = styled.span<ILabelProps>`
+export const WrapLabel = styled.div<ILabelProps>`
   ${ComponentMixin}
 
   background-color: ${props => props.backgroundColor && props.backgroundColor};
@@ -10,5 +10,3 @@ export const Wrap = styled.span<ILabelProps>`
   text-decoration: ${props => (props.lineThrough ? 'line-through' : 'none')};
   cursor: ${props => (props.pointer ? 'pointer' : 'default')};
 `;
-
-export const LabelBox = styled.div``;

@@ -8,7 +8,6 @@ export const Wrap = styled.div<HeaderProps>`
   top: 0px;
   left: 0px;
   background-color: ${props => props.theme.colors.GRAY[100]};
-  z-index: ${props => props.theme.zIndex.HEADER};
 `;
 
 export const Container = styled.header`

@@ -59,18 +59,12 @@ const layoutSizes: { [key: string]: string } = {
   BOTTOM_NAVIGATION: '3rem',
 };
 
-const zIndex: { [key: string]: number } = {
-  HEADER: 5,
-  BOTTOM_NAVIGATION: 5,
-};
-
 const Themes = {
   colors,
   fonts,
   fontWeights,
   viewSizes,
   layoutSizes,
-  zIndex,
 };
 
 export default Themes;
