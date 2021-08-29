@@ -1,12 +1,12 @@
-import { RecommendList, Card, showToast } from 'components';
-// import { useState } from 'react';
+import { RecommendList, Card, showToast, ModalPortal } from 'components';
+import { useState } from 'react';
 import { KakaoLogin, NaverLogin } from 'templates/snsLogin';
 import * as S from './style';
 
 export interface HomeTemplateProps {}
 
 export const HomeTemplate: React.FC<HomeTemplateProps> = ({}) => {
-  // const [isLogin, setIsLogin] = useState<boolean>(false);
+  const [isLogin, setIsLogin] = useState<boolean>(false);
 
   const onClickToastAction = () => {
     showToast('hello~ spring');

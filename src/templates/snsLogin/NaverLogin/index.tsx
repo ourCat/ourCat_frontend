@@ -1,5 +1,5 @@
 import * as S from './style';
-import { PAGE } from 'common';
+import { ICON, PAGE } from 'common';
 import React, { useEffect, useRef } from 'react';
 
 declare global {

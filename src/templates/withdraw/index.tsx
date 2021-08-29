@@ -45,7 +45,7 @@ export const WithDrawTemplate: React.FC<WithDrawTemplateProps> = ({}) => {
   };
 
   const handleCheckCertNumberButtonClick = useCallback(() => {
-    // const certNumberInputValue = certNumberInputRef.current?.value;
+    const certNumberInputValue = certNumberInputRef.current?.value;
     checkCertNumberAPI();
   }, [certNumberInputRef]);
   const handleRegisterButtonClick = useCallback(async () => {
