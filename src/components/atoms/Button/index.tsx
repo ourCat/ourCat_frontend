@@ -1,5 +1,4 @@
-import { fontType } from 'components/atoms';
-import * as S from './style';
+import * as S from "./style";
 
 export interface ButtonProps {
   id?: string;
@@ -12,11 +11,15 @@ export interface ButtonProps {
   width?: string;
   margin?: string;
   padding?: string;
-  fontSize?: fontType;
+  fontSize?: number;
   color?: string;
 }
 
-export const Button: React.FC<ButtonProps> = ({ label = 'Button', onClick, ...props }) => {
+export const Button: React.FC<ButtonProps> = ({
+  label = "Button",
+  onClick,
+  ...props
+}) => {
   return (
     <S.Wrap {...props} onClick={onClick}>
       {label}
