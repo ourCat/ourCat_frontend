@@ -6,7 +6,6 @@ import { ICON, PAGE } from 'common';
 import * as S from './style';
 
 export interface CardProps {
-  id: number;
   avatarImgSrc?: string;
   title: string;
   content: string;
@@ -18,7 +17,6 @@ export interface CardProps {
 }
 
 export const Card: React.FC<CardProps> = ({
-  id,
   avatarImgSrc = ICON.AVATAR,
   title = '뚱땅이',
   bgImgSrc = ICON.AVATAR,
@@ -47,11 +45,9 @@ export const Card: React.FC<CardProps> = ({
     return `${year}.${month}.${day}`;
   }, []);
 
-  const handleCatProfileClick = useCallback(() => router.push(`/cat/${id}`), []);
-
   return (
     <S.Wrap>
-      <S.Header onClick={handleCatProfileClick}>
+      <S.Header>
         <S.Profile>
           <Image src={avatarImgSrc} width={'3rem'} display={'inline'} pointer />
           <Label font={16} weight="bold" color={themeContext.colors.GRAY[100]} pointer>
