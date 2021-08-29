@@ -3,7 +3,6 @@ import { IComponent } from 'common/Interfaces/IComponent';
 
 export const ComponentMixin = css<IComponent>`
   position: ${props => props.position && props.position};
-  display: ${props => props.display && props.display};
   top: ${props => props.top && props.top};
   right: ${props => props.right && props.right};
   bottom: ${props => props.bottom && props.bottom};
@@ -17,5 +16,5 @@ export const ComponentMixin = css<IComponent>`
   color: ${props => props.color && props.color};
   opacity: ${props => props.opacity && props.opacity};
   font: ${props => props.font && props.theme.fonts[props.font]};
-  font-weight: ${props => (props.weight ? props.theme.fontWeights[props.weight] : 400)};
+  font-weight: ${props => props.weight ? props.theme.fontWeights[props.weight] : 400};
 `;

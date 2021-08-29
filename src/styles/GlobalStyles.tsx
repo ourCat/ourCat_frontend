@@ -3,9 +3,6 @@ import reset from 'styled-reset';
 
 const GlobalStyles = createGlobalStyle`
     ${reset};
-    *{
-      box-sizing: border-box;
-    }
     input { 
       -webkit-appearance: none;
       -moz-appearance: none;
