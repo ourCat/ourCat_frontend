@@ -19,7 +19,7 @@ const Home = () => {
     <Wrap>
       <RecommendList />
       <Profile isCat={false} data={sample} />
-      {/* <ThumbnailList data={ThumbnailListData} /> */}
+      <ThumbnailList data={ThumbnailListData} />
       <Card
         title={'뚱땅이'}
         date={new Date()}
