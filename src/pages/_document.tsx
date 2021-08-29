@@ -42,10 +42,6 @@ class MyDocument extends Document<StyledProps> {
             type="text/javascript"
             src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.KAKAO_JAVASCRIPT_KEY}&libraries=services,clusterer`}
           />
-          <script
-            type="text/javascript"
-            src={`https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js`}
-          />
         </Head>
         <body>
           <Main />
