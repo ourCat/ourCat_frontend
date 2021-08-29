@@ -14,6 +14,7 @@ export const WrapInput = styled.input<IInputProps>`
   border: ${props => props.border && props.border};
   color: ${props => props.color && props.color};
   opacity: ${props => props.opacity && props.opacity};
+  cursor: ${props => (props.pointer ? 'pointer' : 'default')};
   font: ${props => props.font && props.theme.fonts[props.font]};
 
   border-radius: 2px;
