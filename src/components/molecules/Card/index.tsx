@@ -88,7 +88,7 @@ export const Card: React.FC<CardProps> = ({
           </S.TagBox>
         </S.CardInfo>
         <S.CardContent>
-          <Label font={16} color={themeContext.colors.BLACK} isNewLine isViewOneLine={!isExpand}>
+          <Label font={16} color={themeContext.colors.BLACK} isNewLine isViewOneLine={isExpand}>
             {content}
           </Label>
           {!isExpand && (
