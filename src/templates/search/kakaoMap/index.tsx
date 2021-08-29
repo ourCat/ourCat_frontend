@@ -29,10 +29,10 @@ export const KakaoMap: React.FC<KakaoMapProps> = ({
   useEffect(() => {
     const kakaoMapElement = kakaoMapRef.current;
     const options = {
-      center: new kakao.maps.LatLng(37.566826, 126.9786567), //지도 중심좌표
-      level: 3, //지도의 확대 레벨
+      center: new kakao.maps.LatLng(37.566826, 126.9786567),
+      level: 3,
     };
-    const kakaoMap = new kakao.maps.Map(kakaoMapElement, options); //지도 생성
+    const kakaoMap = new kakao.maps.Map(kakaoMapElement, options);
 
     const places = new kakao.maps.services.Places();
 
@@ -54,48 +54,18 @@ export const KakaoMap: React.FC<KakaoMapProps> = ({
 
     if (positions) {
       // 마커 클러스터러를 생성
-      const clusterer = new kakao.maps.MarkerClusterer({
+      var clusterer = new kakao.maps.MarkerClusterer({
         map: kakaoMap,
         averageCenter: true,
         minLevel: 8,
       });
 
-      const imageSrc = '/images/img.png';
-      const imageSize = new kakao.maps.Size(48, 48);
-      const imageOption = { offset: new kakao.maps.Point(24, 24) };
-      const makerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption);
-
-      // 인포윈도우를 표시하는 클로저를 만드는 함수
-      function makeOverListener(map: any, marker: any, infowindow: any) {
-        return function () {
-          infowindow.open(map, marker);
-        };
-      }
-
-      // 인포윈도우를 닫는 클로저를 만드는 함수
-      function makeOutListener(infowindow: any) {
-        return function () {
-          infowindow.close();
-        };
-      }
-      const markers = positions.map((position: any) => {
-        const marker = new kakao.maps.Marker({
-          position: new kakao.maps.LatLng(position.latitude, position.longitude),
-          image: makerImage,
-        });
-
-        const iwContent = `<div>${position.cat}</div>`;
-        const infoWindow = new kakao.maps.InfoWindow({
-          content: iwContent,
-        });
-        kakao.maps.event.addListener(
-          marker,
-          'mouseover',
-          makeOverListener(kakaoMap, marker, infoWindow),
-        );
-        kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(infoWindow));
-        return marker;
-      });
+      var markers = positions.map(
+        (position: any) =>
+          new kakao.maps.Marker({
+            position: new kakao.maps.LatLng(position.latitude, position.longitude),
+          }),
+      );
 
       clusterer.addMarkers(markers);
     }
