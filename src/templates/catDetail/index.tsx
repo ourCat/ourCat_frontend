@@ -1,9 +1,8 @@
-import { useEffect } from 'react';
-import { useRouter } from 'next/router';
-import { Profile, ThumbnailList } from 'components';
-import { ThumbnailListData, sample } from 'common';
 import * as S from './style';
-
+import { Profile } from 'components';
+import { sample } from 'common';
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 export interface CatDetailTemplateProps {}
 
 export const CatDetailTemplate: React.FC<CatDetailTemplateProps> = ({}) => {
@@ -16,7 +15,6 @@ export const CatDetailTemplate: React.FC<CatDetailTemplateProps> = ({}) => {
   return (
     <S.Wrap>
       <Profile isCat={false} data={sample} />
-      <ThumbnailList data={ThumbnailListData} />
     </S.Wrap>
   );
 };

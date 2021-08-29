@@ -1,12 +1,10 @@
-import { RecommendList, Card, showToast } from 'components';
 import * as S from './style';
+import { RecommendList, Card, ThumbnailList } from 'components';
+import { ThumbnailListData } from 'common';
 
 export interface HomeTemplateProps {}
 
 export const HomeTemplate: React.FC<HomeTemplateProps> = ({}) => {
-  const onClickToastAction = () => {
-    showToast('hello~ spring');
-  };
   return (
     <S.Wrap>
       <RecommendList />
@@ -28,7 +26,7 @@ export const HomeTemplate: React.FC<HomeTemplateProps> = ({}) => {
         commentCount={311}
         bookmarkCount={110}
       />
-      <button onClick={onClickToastAction}>toast action</button>
+      <ThumbnailList data={ThumbnailListData} />
     </S.Wrap>
   );
 };
