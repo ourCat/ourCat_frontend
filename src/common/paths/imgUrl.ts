@@ -9,5 +9,4 @@ export const ICON = {
   TALK: '/images/talk.PNG',
   USER: '/images/user.PNG',
   STAR: '/images/star.PNG',
-  KAKAO: '/images/kakao-btn.svg',
 };

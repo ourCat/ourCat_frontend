@@ -1,6 +1,6 @@
 import { RecommendList, Card, showToast, ModalPortal } from 'components';
 import { useState } from 'react';
-import { KakaoLogin, NaverLogin } from 'templates/snsLogin';
+import { NaverLogin } from 'templates/snsLogin';
 import * as S from './style';
 
 export interface HomeTemplateProps {}
@@ -16,7 +16,6 @@ export const HomeTemplate: React.FC<HomeTemplateProps> = ({}) => {
     <S.Wrap>
       <RecommendList />
       <NaverLogin />
-      <KakaoLogin />
       <Card
         id={1}
         title={'뚱땅이'}
