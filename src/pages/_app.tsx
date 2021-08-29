@@ -1,13 +1,14 @@
 import React from 'react';
 import Head from 'next/head';
+import GlobalStyles from 'styles/GlobalStyles';
 import { AppProps } from 'next/app';
+
+import { ThemeProvider } from 'styled-components';
+import Themes from 'styles/Theme';
 import { MainLayout } from 'layouts';
 import { ToastComponentContainer } from 'components';
 import { Provider } from 'react-redux';
 import { store } from 'app/store';
-import GlobalStyles from 'styles/GlobalStyles';
-import { ThemeProvider } from 'styled-components';
-import Themes from 'styles/Theme';
 import 'react-toastify/dist/ReactToastify.css';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
