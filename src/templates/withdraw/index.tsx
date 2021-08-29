@@ -19,8 +19,8 @@ export const WithDrawTemplate: React.FC<WithDrawTemplateProps> = ({}) => {
         gender: 'M',
       });
       console.log(result);
-    } catch (err) {
-      console.log(err.message);
+    } catch (error) {
+      console.log(error);
     }
   };
 
@@ -29,7 +29,7 @@ export const WithDrawTemplate: React.FC<WithDrawTemplateProps> = ({}) => {
       const result = await USER_API.get('/user/delete-code');
       console.log(result);
     } catch (err) {
-      console.log(err.message);
+      console.log(err);
     }
   };
 
@@ -40,7 +40,7 @@ export const WithDrawTemplate: React.FC<WithDrawTemplateProps> = ({}) => {
       });
       console.log(result);
     } catch (err) {
-      console.log(err.message);
+      console.log(err);
     }
   };
 

@@ -11,7 +11,6 @@ export const Login: React.FC<ILoginProps> = props => {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm();
 

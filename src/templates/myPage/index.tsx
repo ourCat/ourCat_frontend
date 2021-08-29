@@ -7,7 +7,7 @@ interface IMyPageTemplateProps {}
 
 export const MyPageTemplate: React.FC<IMyPageTemplateProps> = () => {
   const router = useRouter();
-  const [isLogin, setIsLogin] = useState(false);
+  const [isLogin, _] = useState(false);
 
   const handlerCloseModal = () => router.back();
 

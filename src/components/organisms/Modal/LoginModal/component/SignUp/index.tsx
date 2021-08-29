@@ -10,7 +10,6 @@ export const SignUp: React.FC<ISignUpProps> = props => {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm();
 

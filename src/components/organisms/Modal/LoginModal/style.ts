@@ -1,4 +1,3 @@
-import { Label } from 'components/atoms';
 import styled from 'styled-components';
 
 /**
