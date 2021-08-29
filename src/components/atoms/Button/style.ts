@@ -1,9 +1,13 @@
-import { ComponentMixin } from 'common';
 import styled, { css } from 'styled-components';
 import { ButtonProps } from './index';
 
 export const Wrap = styled.button<ButtonProps>`
-  ${ComponentMixin};
+  width: ${props => props.width && props.width};
+  margin: ${props => props.margin && props.margin};
+  padding: ${props => props.padding && props.padding};
+  color: ${props => props.color && props.color};
+  border-radius: 5px;
+  font: ${props => props.fontSize && props.theme.fonts[props.fontSize]};
   cursor: pointer;
   ${props => {
     if (props.filled) {

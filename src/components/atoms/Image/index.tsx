@@ -1,12 +1,15 @@
-import { IComponent } from 'common';
 import * as S from './style';
 
-export interface ImageProps extends IComponent {
+export interface ImageProps {
+  id?: string;
+  className?: string;
+  width?: string;
+  margin?: string;
+  padding?: string;
   url?: string;
-  pointer?: string;
-  onClick?: React.MouseEventHandler<SVGImageElement>;
+  borderRadius?: string;
 }
 
 export const Image: React.FC<ImageProps> = ({ url, ...props }) => {
-  return <S.WrapImage {...props} url={url} />;
+  return <S.Wrap {...props} url={url} />;
 };
