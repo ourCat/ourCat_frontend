@@ -26,7 +26,6 @@ const colors: { [key: string]: string | object } = {
  * Regular 400
  * Bold 700
  */
-
 const fonts: { [key: number]: string } = {
   48: '48px/58px SpoqaHanSans',
   36: '36px/48px SpoqaHanSans',
