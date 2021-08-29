@@ -1,6 +1,7 @@
 import * as S from './style';
 import { Label } from 'components';
 import { useEffect, useRef, useState } from 'react';
+import Head from 'next/head';
 
 export interface KakaoMapProps {}
 
@@ -73,7 +74,13 @@ export const KakaoMap: React.FC<KakaoMapProps> = ({
 
   return (
     <S.Wrap>
-      <S.Map ref={kakaoMapRef} height={height} isError={error} />
+      <Head>
+        <script
+          type="text/javascript"
+          src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.KAKAO_JAVASCRIPT_KEY}&libraries=services,clusterer`}
+        />
+      </Head>
+      <S.Map ref={kakaoMapRef} height={height} />
       {error && (
         <Label font={14} color="RED" margin={'5px 0 0'}>
           {error}

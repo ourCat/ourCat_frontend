@@ -1,18 +1,21 @@
 import * as S from './style';
 import { Button, Input } from 'components';
 import { KakaoMap } from './kakaoMap';
-import { useCallback, useRef, useState } from 'react';
+import { useCallback, useState } from 'react';
 
 export interface SearchTemplateProps {}
 
 export const SearchTemplate: React.FC<SearchTemplateProps> = ({}) => {
+  const [searchInput, setSearchInput] = useState('');
   const [submitKeyword, setSubmitKeyword] = useState('');
-  const searchInputRef = useRef<HTMLInputElement>(null);
 
+  const handleChangeSearchInput = useCallback((e: any) => {
+    const str = e.target.value;
+    setSearchInput(str);
+  }, []);
   const handleSearchButtonClick = useCallback(() => {
-    const searchInputValue = searchInputRef.current?.value;
-    if (searchInputValue) setSubmitKeyword(searchInputValue);
-  }, [searchInputRef]);
+    setSubmitKeyword(searchInput);
+  }, [searchInput]);
 
   const args = {
     address: submitKeyword,
@@ -29,11 +32,10 @@ export const SearchTemplate: React.FC<SearchTemplateProps> = ({}) => {
       <Input
         placeholder="고양이를 찾아보세요."
         margin={'0 0 10px 0'}
-        onKeyPress={e => e.key === 'Enter' && handleSearchButtonClick()}
-        ref={searchInputRef}
+        onChange={e => handleChangeSearchInput(e)}
       />
       <Button label="검색" onClick={handleSearchButtonClick} filled={false} />
-      {submitKeyword && <KakaoMap {...args} />}
+      <KakaoMap {...args} />
     </S.Wrap>
   );
 };
