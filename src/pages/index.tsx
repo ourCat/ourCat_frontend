@@ -19,6 +19,7 @@ const Home = () => {
     <Wrap>
       <RecommendList />
       <Profile isCat={false} data={sample} />
+      {/* <ThumbnailList data={ThumbnailListData} /> */}
       <Card
         title={'뚱땅이'}
         date={new Date()}
@@ -35,7 +36,6 @@ const Home = () => {
         commentCount={311}
         bookmarkCount={110}
       />
-      <ThumbnailList data={ThumbnailListData} />
     </Wrap>
   );
 };
