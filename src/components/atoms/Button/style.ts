@@ -17,7 +17,8 @@ export const Wrap = styled.button<ButtonProps>`
       if (props.filled) {
         return css`
           color: ${props => props.theme.colors.WHITE};
-          background-color: ${props => props.theme.colors.MAIN};
+          background-color: ${props =>
+            props.backgroundColor ? props.backgroundColor : props.theme.colors.MAIN};
           border: ${props => props.theme.colors.WHITE};
           cursor: pointer;
           &:hover {
@@ -28,7 +29,8 @@ export const Wrap = styled.button<ButtonProps>`
       if (!props.filled) {
         return css`
           color: ${props => props.theme.colors.MAIN};
-          background-color: ${props => props.theme.colors.WHITE};
+          background-color: ${props =>
+            props.backgroundColor ? props.backgroundColor : props.theme.colors.WHITE};
           border: ${props => props.theme.colors.MAIN};
           cursor: pointer;
           &:hover {
@@ -37,6 +39,14 @@ export const Wrap = styled.button<ButtonProps>`
           }
         `;
       }
+    }
+  }}
+
+  ${props => {
+    if (props.icon) {
+      return css`
+        display: flex;
+      `;
     }
   }}
 
