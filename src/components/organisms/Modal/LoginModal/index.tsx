@@ -5,6 +5,7 @@ import * as S from './style';
 import { useState } from 'react';
 import { SignUp } from './component';
 import { Login } from './component/Login';
+import { KakaoLogin, NaverLogin } from 'templates/snsLogin';
 
 export interface ILoginModalProps {
   isLogin: boolean;
@@ -42,26 +43,8 @@ export const LoginModal: React.FC<ILoginModalProps> = props => {
                 margin="0 0 0.5rem 0"
                 backgroundColor="#0D1117"
               />
-              <Button
-                onClick={() => {}}
-                filled
-                label="네이버로 시작히기"
-                padding="8px 0"
-                borderRadius="4px"
-                width="100%"
-                margin="0 0 0.5rem 0"
-                backgroundColor="#2CAE00"
-              />
-              <Button
-                onClick={() => {}}
-                filled
-                label="카카오톡으로 시작하기"
-                padding="8px 0"
-                borderRadius="4px"
-                width="100%"
-                margin="0 0 0.5rem 0"
-                backgroundColor="#F2DA00"
-              />
+              <NaverLogin />
+              <KakaoLogin />
               <Button
                 onClick={() => {}}
                 filled

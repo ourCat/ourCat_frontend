@@ -1,6 +1,7 @@
 import * as S from './style';
 import { PAGE } from 'common';
 import React, { useEffect, useRef } from 'react';
+import { Button } from 'components';
 
 declare global {
   interface Window {
@@ -36,5 +37,24 @@ export const NaverLogin = () => {
     }
   }
 
-  return <S.Wrap id="naverIdLogin" ref={NaverLoginButtonRef} />;
+  function handleNaverIconClick() {
+    const naverLoginButton = document.getElementById('naverIdLogin_loginButton');
+    naverLoginButton?.click();
+  }
+
+  return (
+    <>
+      <S.Wrap id="naverIdLogin" ref={NaverLoginButtonRef} />
+      <Button
+        onClick={handleNaverIconClick}
+        filled
+        label="네이버로 시작히기"
+        padding="8px 0"
+        borderRadius="4px"
+        width="100%"
+        margin="0 0 1rem 0"
+        backgroundColor="#2CAE00"
+      />
+    </>
+  );
 };
