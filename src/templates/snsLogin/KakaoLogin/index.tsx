@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { Image } from 'components';
-import { ICON, PAGE } from 'common';
+import { PAGE } from 'common';
+import { Button } from 'components/atoms';
 
 declare global {
   interface Window {
@@ -19,11 +19,10 @@ export const KakaoLogin = () => {
     }
   }
   useEffect(() => {
-    // console.log('javascriptKey: ', `${process.env.KAKAO_JAVASCRIPT_KEY}`);
     if (process.browser) {
       try {
         const { Kakao } = window;
-        if (!Kakao.isInitialized()) Kakao.init(`${process.env.KAKAO_JAVASCRIPT_KEY}`); //KAKAO JAVASCRIPT KEY
+        if (!Kakao.isInitialized()) Kakao.init(`${process.env.KAKAO_JAVASCRIPT_KEY}`);
         setKakao(Kakao);
       } catch (error) {
         console.log(error);
@@ -31,5 +30,16 @@ export const KakaoLogin = () => {
     }
   }, []);
 
-  return <Image src={ICON.KAKAO} width={'28px'} height={'28px'} onClick={handleKakaoButtonClick} />;
+  return (
+    <Button
+      onClick={handleKakaoButtonClick}
+      filled
+      label="카카오톡으로 시작하기"
+      padding="8px 0"
+      borderRadius="4px"
+      width="100%"
+      margin="0 0 1rem 0"
+      backgroundColor="#F2DA00"
+    />
+  );
 };
