@@ -28,18 +28,18 @@ const colors: { [key: string]: string | object } = {
  */
 
 const fonts: { [key: number]: string } = {
-  48: '48px/58px SpoqaHanSans',
-  36: '36px/48px SpoqaHanSans',
-  32: '32px/45px SpoqaHanSans',
-  28: '28px/34px SpoqaHanSans',
-  24: '24px/32px SpoqaHanSans',
-  20: '20px/28px SpoqaHanSans',
-  18: '18px/22px SpoqaHanSans',
-  16: '16px/20px SpoqaHanSans',
-  14: '14px/20px SpoqaHanSans',
-  13: '13px/18px SpoqaHanSans',
-  12: '12px/16px SpoqaHanSans',
-  10: '10px/14px SpoqaHanSans',
+  48: '48px/58px Spoqa Han Sans Neo',
+  36: '36px/48px Spoqa Han Sans Neo',
+  32: '32px/45px Spoqa Han Sans Neo',
+  28: '28px/34px Spoqa Han Sans Neo',
+  24: '24px/34px Spoqa Han Sans Neo',
+  20: '20px/28px Spoqa Han Sans Neo',
+  18: '18px/22px Spoqa Han Sans Neo',
+  16: '16px/22px Spoqa Han Sans Neo',
+  14: '14px/20px Spoqa Han Sans Neo',
+  13: '13px/18px Spoqa Han Sans Neo',
+  12: '12px/18px Spoqa Han Sans Neo',
+  10: '10px/14px Spoqa Han Sans Neo',
 };
 
 const fontWeights: { [key: string]: number } = {
