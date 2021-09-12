@@ -17,32 +17,28 @@ export const Login: React.FC<ILoginProps> = props => {
   const onSubmit = (data: any) => console.log(data);
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(onSubmit)} style={{ width: '100%' }}>
       <S.LoginLabelContainer>
-        <label htmlFor="email" className="flex_label">
-          이메일
-        </label>
         <Input
           id="email"
           type="email"
-          placeholder="이메일을 입력해주세요"
+          placeholder="이메일"
           className="flex_input"
           {...register('email', { required: true })}
         />
       </S.LoginLabelContainer>
       <S.LoginLabelContainer>
-        <label htmlFor="password" className="flex_label">
-          비밀번호
-        </label>
         <Input
           id="password"
           type="password"
-          placeholder="비밀번호를 입력해주세요"
+          placeholder="비밀번호"
           className="flex_input"
           {...register('password', { required: true })}
         />
       </S.LoginLabelContainer>
-      {errors.email && errors.password && <span>This field is required</span>}
+      {errors.email && errors.password && (
+        <S.ErrorContextContainer>This field is required</S.ErrorContextContainer>
+      )}
       <Button
         onClick={() => {}}
         filled
@@ -59,7 +55,8 @@ export const Login: React.FC<ILoginProps> = props => {
         padding="8px 12px"
         borderRadius="4px"
         width="100%"
-        margin="1rem 0 0 0"
+        margin="0.5rem 0 0 0"
+        backgroundColor="gray"
       />
     </form>
   );
