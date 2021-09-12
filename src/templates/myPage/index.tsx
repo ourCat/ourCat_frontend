@@ -1,15 +1,14 @@
 import { useEffect, useState } from 'react';
-import { LoginModal } from 'components';
+import { LoginModal, Profile, SubHeader } from 'components';
 import * as S from './style';
-import { useRouter } from 'next/router';
+import { sample } from 'common';
 
 interface IMyPageTemplateProps {}
 
 export const MyPageTemplate: React.FC<IMyPageTemplateProps> = () => {
-  const router = useRouter();
-  const [isLogin, _] = useState(false);
+  const [isLogin, setLogin] = useState(false);
 
-  const handlerCloseModal = () => router.back();
+  const handlerCloseModal = () => setLogin(true);
 
   useEffect(() => {
     // 로그인 o => 화면 렌더링
@@ -20,7 +19,10 @@ export const MyPageTemplate: React.FC<IMyPageTemplateProps> = () => {
   return (
     <S.MyPageWrap>
       {isLogin ? (
-        <S.MyPageWrap>mypage</S.MyPageWrap>
+        <S.MyPageWrap>
+          <SubHeader />
+          <Profile isCat={false} data={sample} />
+        </S.MyPageWrap>
       ) : (
         <LoginModal isLogin={isLogin} handleCloseModal={handlerCloseModal} />
       )}
