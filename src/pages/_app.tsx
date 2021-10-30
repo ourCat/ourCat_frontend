@@ -19,6 +19,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
           name="viewport"
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
         />
+        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"></meta>
       </Head>
       <GlobalStyles />
       <Provider store={store}>
