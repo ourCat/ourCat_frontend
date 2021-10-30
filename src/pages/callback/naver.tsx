@@ -16,7 +16,6 @@ const NaverCallbackPage = () => {
         console.error('access_denined');
         return '';
       }
-      console.log('accessToken: ', accessToken);
       return accessToken;
     } catch (error) {
       console.error('translate access token error');

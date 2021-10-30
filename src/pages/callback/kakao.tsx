@@ -18,7 +18,6 @@ const Kakao = () => {
   const error = router.query.error;
 
   const getKakaoToken = async (code: string | string[] | undefined) => {
-    console.log('clientId: ', `${process.env.KAKAO_JAVASCRIPT_KEY}`);
     if (!code) return;
     //2. 인증코드를 통해 사용자 토큰 요청
     const result: any = await axios.get('https://kauth.kakao.com/oauth/token', {
@@ -32,7 +31,6 @@ const Kakao = () => {
 
     const access_token = result.data.access_token;
     if (access_token) {
-      console.log(access_token);
       socialLogin(access_token);
     }
   };
@@ -41,8 +39,6 @@ const Kakao = () => {
     const result = await USER_API.post('/user/social/kakao', {
       token,
     });
-
-    console.log(result);
     if (result.status === 200) {
       const { userToken } = result.data;
       alert(`카카오 소셜 로그인 완료\ntoken: ${userToken}`);
