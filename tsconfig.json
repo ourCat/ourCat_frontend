@@ -11,8 +11,8 @@
     "moduleResolution": "node",
     "noEmit": true,
     "noFallthroughCasesInSwitch": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
+    "noUnusedLocals": false, // 추후에 true로 수정
+    "noUnusedParameters": false, // 추후에 true로 수정
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
