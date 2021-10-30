@@ -28,7 +28,6 @@ const NaverCallbackPage = () => {
       token,
     });
 
-    console.log(result);
     if (result.status === 200) {
       const { userToken } = result.data;
       alert(`네이버 소셜 로그인 완료\ntoken: ${userToken}`);

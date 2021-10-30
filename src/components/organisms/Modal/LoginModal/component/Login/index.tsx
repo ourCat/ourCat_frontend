@@ -2,9 +2,16 @@ import { useForm } from 'react-hook-form';
 import { Button, Input } from 'components/atoms';
 
 import * as S from './style';
+import { LoginAPI } from 'api/setting';
+import { is } from 'immer/dist/internal';
 
 interface ILoginProps {
-  handlerLogin: () => void;
+  handlerBackPage: () => void;
+}
+
+interface SubmitDataProps {
+  email: string;
+  password: string;
 }
 
 export const Login: React.FC<ILoginProps> = props => {
@@ -14,7 +21,13 @@ export const Login: React.FC<ILoginProps> = props => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data: any) => console.log(data);
+  const onSubmit = (data: SubmitDataProps) => {
+    LoginAPI({ loginId: data.email, password: data.password })
+      .then(res => {
+        if (res.status === 200) localStorage.setItem('isLogin', 'true');
+      })
+      .catch(err => console.log(err));
+  };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} style={{ width: '100%' }}>
@@ -49,7 +62,7 @@ export const Login: React.FC<ILoginProps> = props => {
         margin="1rem 0 0 0"
       />
       <Button
-        onClick={props.handlerLogin}
+        onClick={props.handlerBackPage}
         filled
         label="뒤로가기"
         padding="8px 12px"

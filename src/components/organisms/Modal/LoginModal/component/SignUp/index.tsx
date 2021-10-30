@@ -1,9 +1,19 @@
 import { useForm } from 'react-hook-form';
 import * as S from './style';
 import { Button, Input } from 'components/atoms';
+import { SignUpAPI } from 'api/setting';
 
 interface ISignUpProps {
-  handlerSignUp: () => void;
+  handlerBackPage: () => void;
+}
+
+interface SubmitDataProps {
+  email: string;
+  gender: string;
+  mobileNo: string;
+  nick_name: string;
+  password: string;
+  password_check: string;
 }
 
 export const SignUp: React.FC<ISignUpProps> = props => {
@@ -13,7 +23,22 @@ export const SignUp: React.FC<ISignUpProps> = props => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data: any) => console.log(data);
+  const onSubmit = (data: SubmitDataProps) => {
+    SignUpAPI({
+      nickname: data.nick_name,
+      email: data.email,
+      mobileNo: data.mobileNo,
+      password: data.password,
+      passwordConfirm: data.password_check,
+      gender: data.gender.substring(0, 1).toUpperCase(),
+    })
+      .then(res => {
+        if (res.status === 201) {
+          localStorage.setItem('isLogin', 'true');
+        }
+      })
+      .catch(err => console.log(err));
+  };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} style={{ width: '100%' }}>
@@ -34,7 +59,13 @@ export const SignUp: React.FC<ISignUpProps> = props => {
         </select>
       </S.LoginLabelContainer>
       <S.LoginLabelContainer>
-        <Input id="phone_number" type="tel" placeholder="전화번호" className="flex_input" />
+        <Input
+          id="phone_number"
+          type="tel"
+          placeholder="전화번호"
+          className="flex_input"
+          {...register('mobileNo', { required: true })}
+        />
       </S.LoginLabelContainer>
       <S.LoginLabelContainer>
         <Input
@@ -81,7 +112,7 @@ export const SignUp: React.FC<ISignUpProps> = props => {
           width="100%"
         />
         <Button
-          onClick={props.handlerSignUp}
+          onClick={props.handlerBackPage}
           filled
           label="뒤로가기"
           padding="8px 12px"

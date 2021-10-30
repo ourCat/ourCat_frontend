@@ -18,7 +18,6 @@ export const WithDrawTemplate: React.FC<WithDrawTemplateProps> = ({}) => {
         passwordConfirm: '1234qwer!',
         gender: 'M',
       });
-      console.log(result);
     } catch (error) {
       console.log(error);
     }
@@ -27,7 +26,6 @@ export const WithDrawTemplate: React.FC<WithDrawTemplateProps> = ({}) => {
   const checkCertNumberAPI = async () => {
     try {
       const result = await USER_API.get('/user/delete-code');
-      console.log(result);
     } catch (err) {
       console.log(err);
     }
@@ -38,7 +36,6 @@ export const WithDrawTemplate: React.FC<WithDrawTemplateProps> = ({}) => {
       const result = await USER_API.post('/user/deactivate', {
         reason: 'good',
       });
-      console.log(result);
     } catch (err) {
       console.log(err);
     }
