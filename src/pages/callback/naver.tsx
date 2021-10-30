@@ -1,47 +1,47 @@
 import React, { useEffect } from 'react';
 import { useRouter } from 'next/router';
-import { PAGE } from 'common';
 import { Label } from 'components';
-
-declare global {
-  interface Window {
-    naver: any;
-  }
-}
+import { USER_API } from 'api/setting';
 
 /* callback page */
 const NaverCallbackPage = () => {
   const router = useRouter();
 
+  const translateAccessToken = () => {
+    try {
+      const href = window.location.href.replace('#', '?');
+      const url = new URL(href);
+      const accessToken = url.searchParams.get('access_token');
+      if (!accessToken || accessToken === 'access_denied') {
+        console.error('access_denined');
+        return '';
+      }
+      console.log('accessToken: ', accessToken);
+      return accessToken;
+    } catch (error) {
+      console.error('translate access token error');
+      return '';
+    }
+  };
+
+  const socialLogin = async (token: string) => {
+    const result = await USER_API.post('/user/social/naver', {
+      token,
+    });
+
+    console.log(result);
+    if (result.status === 200) {
+      const { userToken } = result.data;
+      alert(`네이버 소셜 로그인 완료\ntoken: ${userToken}`);
+    }
+  };
+
   useEffect(() => {
-    if (process.browser) {
-      const { naver } = window;
-      const naverLogin = new naver.LoginWithNaverId({
-        clientId: `${process.env.NAVER_CLIENT_ID}`,
-        callbackUrl: PAGE.NAVER_CALLBACK,
-        callbackHandle: true,
-      });
-      naverLogin.init();
-      naverLogin.getLoginStatus(function (status: any) {
-        if (status) {
-          /* 필수적으로 받아야하는 프로필 정보가 있다면 callback처리 시점에 체크 */
-          console.log(naverLogin.user);
-          const email = naverLogin.user.getEmail();
-
-          const userData = {
-            email: email || null,
-            name: naverLogin.user.getName() || null,
-            nickname: naverLogin.user.getNickName() || null,
-            gender: naverLogin.user.getGender() || null,
-
-            uniqId: naverLogin.user.getId() || null,
-            mobile: naverLogin.user.getMobile() || null,
-          };
-          console.log(userData);
-        } else {
-          console.log('callback 처리에 실패하였습니다.');
-        }
-      });
+    try {
+      const token = translateAccessToken();
+      socialLogin(token);
+    } catch (error) {
+      console.error('social Error');
     }
   }, [router]);
 
