@@ -3,7 +3,6 @@ import { Button, Input } from 'components/atoms';
 
 import * as S from './style';
 import { LoginAPI } from 'api/setting';
-import { is } from 'immer/dist/internal';
 
 interface ILoginProps {
   handlerBackPage: () => void;
