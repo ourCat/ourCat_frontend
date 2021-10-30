@@ -19,15 +19,6 @@ export const SignUp: React.FC<ISignUpProps> = props => {
     <form onSubmit={handleSubmit(onSubmit)} style={{ width: '100%' }}>
       <S.LoginLabelContainer>
         <Input
-          id="name"
-          type="text"
-          placeholder="이름"
-          className="flex_input"
-          {...register('name', { required: true })}
-        />
-      </S.LoginLabelContainer>
-      <S.LoginLabelContainer>
-        <Input
           id="nick_name"
           type="text"
           placeholder="닉네임"
@@ -80,25 +71,25 @@ export const SignUp: React.FC<ISignUpProps> = props => {
         errors.password_check && (
           <S.ErrorContextContainer>This field is required</S.ErrorContextContainer>
         )}
-      <Button
-        onClick={() => {}}
-        filled
-        label="Login"
-        padding="8px 12px"
-        borderRadius="4px"
-        width="100%"
-        margin="1rem 0 0 0"
-      />
-      <Button
-        onClick={props.handlerSignUp}
-        filled
-        label="뒤로가기"
-        padding="8px 12px"
-        borderRadius="4px"
-        width="100%"
-        margin="0.5rem 0 0 0"
-        backgroundColor="gray"
-      />
+      <S.ButtonContainer>
+        <Button
+          onClick={() => {}}
+          filled
+          label="Login"
+          padding="8px 12px"
+          borderRadius="4px"
+          width="100%"
+        />
+        <Button
+          onClick={props.handlerSignUp}
+          filled
+          label="뒤로가기"
+          padding="8px 12px"
+          borderRadius="4px"
+          width="100%"
+          backgroundColor="gray"
+        />
+      </S.ButtonContainer>
     </form>
   );
 };

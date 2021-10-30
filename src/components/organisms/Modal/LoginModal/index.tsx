@@ -5,7 +5,6 @@ import * as S from './style';
 import { useState } from 'react';
 import { SignUp } from './component';
 import { Login } from './component/Login';
-import { KakaoLogin, NaverLogin } from 'templates/snsLogin';
 
 export interface ILoginModalProps {
   isLogin: boolean;
@@ -28,7 +27,7 @@ export const LoginModal: React.FC<ILoginModalProps> = props => {
       <S.LoginModalWarp>
         <S.LoginLogoContainer>
           <Image src={ICON.LOGO} width="60%" padding="10px" />
-          <Label color={'gray'}>우리동네 길고양이 커뮤니티🐱</Label>
+          <Label color={'gray'}>우리동네 길고양이 커뮤니티</Label>
         </S.LoginLogoContainer>
         {!isSignUp && !isLogin && (
           <>
@@ -43,16 +42,25 @@ export const LoginModal: React.FC<ILoginModalProps> = props => {
                 margin="0 0 0.5rem 0"
                 backgroundColor="#0D1117"
               />
-              <NaverLogin />
-              <KakaoLogin />
               <Button
                 onClick={() => {}}
                 filled
-                label="구글로 시작하기"
+                label="네이버로 시작히기"
                 padding="8px 0"
                 borderRadius="4px"
                 width="100%"
-                backgroundColor="#4285F4"
+                margin="0 0 0.5rem 0"
+                backgroundColor="#2CAE00"
+              />
+              <Button
+                onClick={() => {}}
+                filled
+                label="카카오톡으로 시작하기"
+                padding="8px 0"
+                borderRadius="4px"
+                width="100%"
+                margin="0 0 0.5rem 0"
+                backgroundColor="#F2DA00"
               />
             </S.LoginSocialContainer>
             {/* space bar */}
