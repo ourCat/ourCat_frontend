@@ -13,11 +13,11 @@ export interface ILoginModalProps {
 }
 
 export const LoginModal: React.FC<ILoginModalProps> = props => {
-  const [isSignUp, setIsSignUp] = useState(false);
-  const [isLogin, setIsLogin] = useState(false);
+  const [isSignUpView, setIsSignUpView] = useState(false);
+  const [isLoginView, setIsLoginView] = useState(false);
 
-  const handlerSignUp = () => setIsSignUp(!isSignUp);
-  const handlerLogin = () => setIsLogin(!isLogin);
+  const handlerSignUpPage = () => setIsSignUpView(!isSignUpView);
+  const handlerLoginPage = () => setIsLoginView(!isLoginView);
 
   /**
    * TODO: 버튼에 아이콘 추가하기
@@ -30,11 +30,11 @@ export const LoginModal: React.FC<ILoginModalProps> = props => {
           <Image src={ICON.LOGO} width="60%" padding="10px" />
           <Label color={'gray'}>우리동네 길고양이 커뮤니티</Label>
         </S.LoginLogoContainer>
-        {!isSignUp && !isLogin && (
+        {!isSignUpView && !isLoginView && (
           <>
             <S.LoginSocialContainer>
               <Button
-                onClick={handlerLogin}
+                onClick={handlerLoginPage}
                 filled
                 label="이메일로 시작히기"
                 padding="8px 0"
@@ -54,7 +54,7 @@ export const LoginModal: React.FC<ILoginModalProps> = props => {
             </S.LoginModalSpaceContainer>
             <S.LoginSocialContainer>
               <Button
-                onClick={handlerSignUp}
+                onClick={handlerSignUpPage}
                 filled={false}
                 label="이메일 회원가입하기"
                 padding="8px 0"
@@ -64,14 +64,14 @@ export const LoginModal: React.FC<ILoginModalProps> = props => {
             </S.LoginSocialContainer>
           </>
         )}
-        {isSignUp && (
+        {isSignUpView && (
           <S.LoginSocialContainer>
-            <SignUp handlerSignUp={handlerSignUp} />
+            <SignUp handlerBackPage={handlerSignUpPage} />
           </S.LoginSocialContainer>
         )}
-        {isLogin && (
+        {isLoginView && (
           <S.LoginSocialContainer>
-            <Login handlerLogin={handlerLogin} />
+            <Login handlerBackPage={handlerLoginPage} />
           </S.LoginSocialContainer>
         )}
       </S.LoginModalWarp>

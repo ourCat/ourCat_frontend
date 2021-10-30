@@ -12,9 +12,6 @@ export const NaverLogin = () => {
   const NaverLoginButtonRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    console.log('clientId: ', process.env.NAVER_CLIENT_ID);
-    console.log('callbackUri: ', PAGE.NAVER_CALLBACK);
-
     initLogin();
   }, []);
 

@@ -44,7 +44,6 @@ export const KakaoMap: React.FC<KakaoMapProps> = ({
         const bounds = new kakao.maps.LatLngBounds();
 
         data.forEach((item: any) => bounds.extend(new kakao.maps.LatLng(item.y, item.x)));
-        console.log(data);
         kakaoMap.setBounds(bounds);
       } else {
         setError('검색 결과를 찾을 수 없습니다.');
@@ -96,7 +95,6 @@ export const KakaoMap: React.FC<KakaoMapProps> = ({
         );
         kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(infoWindow));
         kakao.maps.event.addListener(marker, 'click', function () {
-          console.log(`${position.cat}`);
           setClickedItem(`${position.cat}`);
         });
         return marker;
