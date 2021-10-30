@@ -52,7 +52,7 @@ export const NaverLogin = () => {
         padding="8px 0"
         borderRadius="4px"
         width="100%"
-        margin="0 0 1rem 0"
+        margin="0 0 0.5rem 0"
         backgroundColor="#2CAE00"
       />
     </>
