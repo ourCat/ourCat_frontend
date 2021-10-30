@@ -27,7 +27,7 @@ export const LoginModal: React.FC<ILoginModalProps> = props => {
       <S.LoginModalWarp>
         <S.LoginLogoContainer>
           <Image src={ICON.LOGO} width="60%" padding="10px" />
-          <Label color={'gray'}>우리동네 길고양이 커뮤니티🐱</Label>
+          <Label color={'gray'}>우리동네 길고양이 커뮤니티</Label>
         </S.LoginLogoContainer>
         {!isSignUp && !isLogin && (
           <>
@@ -61,15 +61,6 @@ export const LoginModal: React.FC<ILoginModalProps> = props => {
                 width="100%"
                 margin="0 0 0.5rem 0"
                 backgroundColor="#F2DA00"
-              />
-              <Button
-                onClick={() => {}}
-                filled
-                label="구글로 시작하기"
-                padding="8px 0"
-                borderRadius="4px"
-                width="100%"
-                backgroundColor="#4285F4"
               />
             </S.LoginSocialContainer>
             {/* space bar */}

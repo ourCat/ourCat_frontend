@@ -22,7 +22,7 @@ export const LoginLogoContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 `;
 
 export const LoginSocialContainer = styled.div`
@@ -41,7 +41,7 @@ export const LoginModalSpaceContainer = styled.div`
   width: 100%;
   display: flex;
   color: ${props => props.theme.colors.GRAY[200]};
-  margin: 2rem 0;
+  margin: 1rem 0;
 
   .space_text {
     width: 100%;
